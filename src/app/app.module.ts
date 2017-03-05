@@ -24,10 +24,8 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { HomeComponent } from './home';
-
-import '../styles/styles.scss';
-import '../styles/headings.css';
+import { CoreModule } from './core/core.module';
+import { HomeComponent } from './home/home.component';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -53,6 +51,7 @@ type StoreType = {
   imports: [ // import Angular's modules
     BrowserModule,
     FormsModule,
+    CoreModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],

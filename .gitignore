@@ -63,10 +63,13 @@ dll/
 # IDE #
 .idea/
 *.swp
-
+.vscode/
 
 # Angular #
 *.ngfactory.ts
 *.css.shim.ts
 *.ngsummary.json
 *.shim.ngstyle.ts
+
+# VCS #
+.github/
