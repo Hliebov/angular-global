@@ -6,6 +6,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LogoComponent } from './logo/logo.component';
 import { LoginComponent } from './login/login.component';
+import { CoursesComponent } from './courses/courses.component';
+import { AddCourseComponent } from './addCourse/addCourse.component';
 
 @NgModule({
   imports: [
@@ -13,6 +15,8 @@ import { LoginComponent } from './login/login.component';
   ],
   exports: [
     CourseComponent,
+    CoursesComponent,
+    AddCourseComponent,
     SearchComponent,
     HeaderComponent,
     FooterComponent,
@@ -21,6 +25,8 @@ import { LoginComponent } from './login/login.component';
   ],
   declarations: [
     CourseComponent,
+    CoursesComponent,
+    AddCourseComponent,
     SearchComponent,
     HeaderComponent,
     FooterComponent,

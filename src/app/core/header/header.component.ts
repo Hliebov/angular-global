@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'header',
-  template: `<div>Header component</div>`
+  templateUrl: './header.template.html',
+  styleUrls: ['header.style.scss']
 })
 class HeaderComponent {
 }

@@ -4,7 +4,7 @@ import {
 
 @Component({
   selector: 'home',
-  styleUrls: [ 'home.component.css' ],
+  styleUrls: [ 'home.style.scss' ],
   templateUrl: 'home.component.html'
 })
 export class HomeComponent {
