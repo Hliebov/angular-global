@@ -1,1 +1,21 @@
-/*sasdf*/
+.header {
+
+  &__logo {
+    float: left;
+  }
+
+  &__breadcrumb {
+    float: left;
+  }
+
+  &-auth {
+    float: right;
+    &__username {
+
+    }
+
+    &login {
+
+    }
+  }
+}
