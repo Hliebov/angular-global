@@ -27,6 +27,8 @@ import { AppState, InternalStateType } from './app.service';
 import { CoreModule } from './core/core.module';
 import { HomeComponent } from './home/home.component';
 
+import './../assets/styles/common.scss';
+
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
