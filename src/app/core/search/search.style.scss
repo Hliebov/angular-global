@@ -1,0 +1,15 @@
+.search {
+  .input-field {
+    width: 50%;
+    float: left;
+
+    i {
+      top: 10px;
+    }
+  }
+  &__find {
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 22px;
+  }
+}

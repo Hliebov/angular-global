@@ -41,7 +41,12 @@
       float: right;
       padding: 6px 15px;
       border: 2px solid #ffffff;
-
+      cursor: pointer;
+      &:hover {
+        background: #ffffff;
+        color: #182D3B;
+      }
+      transition: all 0.3s;
     }
   }
 }

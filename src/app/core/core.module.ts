@@ -8,10 +8,12 @@ import { LogoComponent } from './logo/logo.component';
 import { LoginComponent } from './login/login.component';
 import { CoursesComponent } from './courses/courses.component';
 import { AddCourseComponent } from './addCourse/addCourse.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     CourseComponent,

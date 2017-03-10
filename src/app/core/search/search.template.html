@@ -1,0 +1,21 @@
+<div class="search">
+  <div class="input-field">
+    <div class="search__input">
+      <input [(ngModel)]="searchQuery"
+             (keyup.enter)="onSearch($event)"
+             id="search" type="search" required>
+      <label class="label-icon" for="search">
+        <i class="material-icons">search</i>
+      </label>
+      <i (click)="clearQuery()"
+        class="material-icons">
+        close
+      </i>
+    </div>
+  </div>
+  <div class="search__find">
+    <a (click)="onSearch()" class="waves-effect blue-grey darken-4 btn">
+      find
+    </a>
+  </div>
+</div>
