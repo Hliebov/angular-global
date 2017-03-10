@@ -1,6 +1,10 @@
 .search {
+  width: 100%;
+
+  &__input {
+    width: 500px;
+  }
   .input-field {
-    width: 50%;
     float: left;
 
     i {

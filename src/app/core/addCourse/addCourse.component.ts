@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'add-course',
-  template: `<button>Add course</button>`
+  templateUrl: 'addCourse.template.html',
+  styleUrls: ['addCourse.style.scss']
 })
 class AddCourseComponent {
 
