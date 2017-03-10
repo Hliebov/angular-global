@@ -29,6 +29,10 @@ import { HomeComponent } from './home/home.component';
 
 import '../styles/styles.scss';
 
+import 'materialize-css';
+import 'angular2-materialize';
+import { MaterializeModule } from 'angular2-materialize';
+
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
@@ -52,6 +56,7 @@ type StoreType = {
   ],
   imports: [ // import Angular's modules
     BrowserModule,
+    MaterializeModule,
     FormsModule,
     CoreModule,
     HttpModule,
