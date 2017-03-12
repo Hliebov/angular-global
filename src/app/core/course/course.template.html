@@ -1,0 +1,32 @@
+<div class="course">
+  <div
+    class="course__title"
+    [innerText]="course.title">
+  </div>
+
+  <div
+    class="course__date"
+    [innerText]="getProperDate(course.date)">
+  </div>
+
+  <div
+    class="course__duration"
+    [innerText]="getDurationInMinutes(course.duration)">
+  </div>
+
+  <div
+    class="course__description"
+    [innerText]="course.description">
+  </div>
+
+  <div class="course-edit">
+    <div
+      class="waves-effect blue accent-2 btn">
+      Edit
+    </div>
+    <div (click)="onCourseDelete(course)"
+         class="waves-effect red accent-2 btn">
+      Delete
+    </div>
+  </div>
+</div>
