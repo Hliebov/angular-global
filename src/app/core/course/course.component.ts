@@ -11,7 +11,7 @@ class CourseComponent {
   @Output() public courseOutput: EventEmitter<Course> = new EventEmitter();
 
   public getProperDate(date: number): string {
-    return (new Date(date)).toString();
+    return (new Date(date)).toDateString();
   }
 
   public getDurationInMinutes(duration: number): string {
