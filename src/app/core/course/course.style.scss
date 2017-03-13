@@ -1,0 +1,31 @@
+.course {
+  margin-top: 40px;
+  &__title {
+    display: inline-block;
+    float: left;
+  }
+
+  &__date {
+    display: inline-block;
+    float: right;
+  }
+
+  &__duration {
+    display: inline-block;
+    float: left;
+    margin-left: 10%;
+  }
+
+  &__description {
+    float: left;
+  }
+
+  &-edit {
+    float: right;
+    &__ctrl {
+      margin-top: 10px;
+      display: block;
+    }
+  }
+
+}

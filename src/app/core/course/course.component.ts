@@ -3,7 +3,8 @@ import { Course } from './course.type';
 
 @Component({
   selector: 'course',
-  templateUrl: 'course.template.html'
+  templateUrl: 'course.template.html',
+  styleUrls: ['course.style.scss']
 })
 class CourseComponent {
   @Input() public course: Course;
