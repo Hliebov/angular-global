@@ -9,11 +9,16 @@ import { LoginComponent } from './login/login.component';
 import { CoursesComponent } from './courses/courses.component';
 import { AddCourseComponent } from './addCourse/addCourse.component';
 import { FormsModule } from '@angular/forms';
+import { CoursesService } from './courses/courses.service';
+import { ModalModule } from 'angular2-modal';
+import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot(),
+    BootstrapModalModule
   ],
   exports: [
     CourseComponent,
@@ -34,6 +39,9 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     LogoComponent,
     LoginComponent
+  ],
+  providers: [
+    CoursesService
   ]
 })
 class CoreModule {

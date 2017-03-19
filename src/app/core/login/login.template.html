@@ -1,0 +1,15 @@
+<div class="login">
+  <p>Name:</p>
+  <input [(ngModel)]="name"
+         (keyup.enter)="login()"
+         placeholder="Enter your name">
+  <p>Password:</p>
+  <input [(ngModel)]="password"
+         (keyup.enter)="login()"
+         placeholder="Enter your password">
+  <div
+    (click)="login()"
+    class="waves-effect blue accent-2 btn">
+    Login
+  </div>
+</div>

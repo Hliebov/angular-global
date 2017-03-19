@@ -2,16 +2,21 @@
   <img src="./../../../assets/logo.svg"
        alt="logo"
        class="header__logo">
-  <div class="header__breadcrumb">
+  <div class="header__breadcrumb"
+       *ngIf="isAuthenticated()">
     <a href="#" class="breadcrumb">Home</a>
     <a href="#" class="breadcrumb">Courses</a>
   </div>
-  <div class="header-auth">
+  <div class="header-auth"
+       *ngIf="isAuthenticated()">
     <p class="header-auth__welcome">Welcome,
-      <span class="header-auth__username">
-        firstName lastName
+      <span class="header-auth__username"
+            [innerText]="getUserInfo()">
       </span>
     </p>
-    <div class="header-auth__login">Log out</div>
+    <div  class="header-auth__login"
+         (click)="logout()">
+      Log out
+    </div>
   </div>
 </div>
