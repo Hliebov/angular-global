@@ -1,7 +1,7 @@
 import {
   Component
 } from '@angular/core';
-import { LoginService } from './../core/login/login.service';
+import { AuthService } from './../shared/auth/auth.service';
 
 @Component({
   selector: 'home',
@@ -9,11 +9,11 @@ import { LoginService } from './../core/login/login.service';
   templateUrl: 'home.template.html'
 })
 export class HomeComponent {
-  constructor(public loginService: LoginService) {
+  constructor(public authService: AuthService) {
     // lint
   }
 
   public isAuthenticated(): boolean {
-    return this.loginService.isAuthenticated();
+    return this.authService.isAuthenticated();
   }
 }

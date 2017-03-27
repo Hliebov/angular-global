@@ -32,7 +32,7 @@ import '../styles/styles.scss';
 import 'materialize-css';
 import 'angular2-materialize';
 import { MaterializeModule } from 'angular2-materialize';
-import { LoginService } from './core/login/login.service';
+import { SharedModule } from './shared/shared.module';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -60,13 +60,13 @@ type StoreType = {
     MaterializeModule,
     FormsModule,
     CoreModule,
+    SharedModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
-    APP_PROVIDERS,
-    LoginService
+    APP_PROVIDERS
   ]
 })
 export class AppModule {

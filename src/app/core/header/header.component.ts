@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LoginService } from './../login/login.service';
+import { AuthService } from './../../shared/auth/auth.service';
 
 @Component({
   selector: 'header',
@@ -7,20 +7,20 @@ import { LoginService } from './../login/login.service';
   styleUrls: ['header.style.scss']
 })
 class HeaderComponent {
-  constructor(public loginService: LoginService) {
+  constructor(public authService: AuthService) {
     // lint
   }
 
   public logout(): void {
-    this.loginService.logout();
+    this.authService.logout();
   }
 
   public isAuthenticated(): boolean {
-    return this.loginService.isAuthenticated();
+    return this.authService.isAuthenticated();
   }
 
   public getUserInfo(): string {
-    return this.loginService.getUserInfo();
+    return this.authService.getUserInfo();
   }
 }
 

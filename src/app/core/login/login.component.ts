@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LoginService } from './login.service';
+import { AuthService } from './../../shared/auth/auth.service';
 
 @Component({
   selector: 'login',
@@ -10,12 +10,12 @@ class LoginComponent {
   public name: string = '';
   public password: string = '';
 
-  constructor(public loginService: LoginService) {
+  constructor(public authService: AuthService) {
     // lint
   }
 
   public login(): void {
-    this.loginService.login(this.name);
+    this.authService.login(this.name);
   }
 }
 
