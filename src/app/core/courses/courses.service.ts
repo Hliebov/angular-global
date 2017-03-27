@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Course } from '../course/course.type';
 import { mockCourses } from './courses.mock';
+import { Observable } from 'rxjs';
 
 @Injectable()
 class CoursesService {
-  private courses: Course[] = mockCourses;
+  public courses: Course[] = mockCourses;
 
-  public getList(): Course[] {
-    return this.courses;
+  public getList() {
+    return Observable.of(this.courses);
   }
 
   public createCourse(): void {

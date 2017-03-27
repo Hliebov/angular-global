@@ -8,7 +8,7 @@ import { Modal } from 'angular2-modal/plugins/bootstrap';
   templateUrl: 'courses.template.html'
 })
 class CoursesComponent implements OnInit {
-  public courses: Course[];
+  public courses: Course[] = [];
 
   constructor( public coursesService: CoursesService,
                public modal: Modal) {
@@ -16,7 +16,9 @@ class CoursesComponent implements OnInit {
   }
 
   public ngOnInit() {
-    this.courses = this.coursesService.getList();
+    this.coursesService.getList().subscribe((courses) => {
+      this.courses = courses;
+    });
   }
 
   public openConfirmModal(message: string): Promise<any> {
