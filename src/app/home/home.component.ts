@@ -9,11 +9,11 @@ import { AuthService } from './../shared/auth/auth.service';
   templateUrl: 'home.template.html'
 })
 export class HomeComponent {
-  constructor(public authService: AuthService) {
-    // lint
-  }
+  public username: string;
 
-  public isAuthenticated(): boolean {
-    return this.authService.isAuthenticated();
+  constructor(public authService: AuthService) {
+    this.authService.getUserInfo().subscribe((username) => {
+      this.username = username;
+    });
   }
 }

@@ -7,21 +7,17 @@ import { AuthService } from './../../shared/auth/auth.service';
   styleUrls: ['header.style.scss']
 })
 class HeaderComponent {
+  public username: string;
   constructor(public authService: AuthService) {
-    // lint
+    this.authService.getUserInfo().subscribe((username) => {
+      this.username = username;
+    });
   }
 
   public logout(): void {
     this.authService.logout();
   }
 
-  public isAuthenticated(): boolean {
-    return this.authService.isAuthenticated();
-  }
-
-  public getUserInfo(): string {
-    return this.authService.getUserInfo();
-  }
 }
 
 export { HeaderComponent };

@@ -1,13 +1,13 @@
 <div>
   <header></header>
   <div class="clearfix"></div>
-  <div class="main" *ngIf="isAuthenticated()">
+  <div class="main" *ngIf="username">
     <search></search>
     <add-course></add-course>
     <div class="clearfix"></div>
     <courses></courses>
   </div>
-  <login *ngIf="!isAuthenticated()"></login>
+  <login *ngIf="!username"></login>
   <footer></footer>
 </div>
 

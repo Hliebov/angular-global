@@ -3,15 +3,15 @@
        alt="logo"
        class="header__logo">
   <div class="header__breadcrumb"
-       *ngIf="isAuthenticated()">
+       *ngIf="username">
     <a href="#" class="breadcrumb">Home</a>
     <a href="#" class="breadcrumb">Courses</a>
   </div>
   <div class="header-auth"
-       *ngIf="isAuthenticated()">
+       *ngIf="username">
     <p class="header-auth__welcome">Welcome,
       <span class="header-auth__username"
-            [innerText]="getUserInfo()">
+            [innerText]="username">
       </span>
     </p>
     <div  class="header-auth__login"
