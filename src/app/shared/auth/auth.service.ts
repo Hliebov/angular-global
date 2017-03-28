@@ -12,13 +12,13 @@ class AuthService {
   public login(name: string): void {
     if (name) {
       localStorage.setItem('userName', name);
-      this.username.next(localStorage.getItem('userName') || '');
+      this.username.next(name);
     }
   }
 
   public logout(): void {
     localStorage.removeItem('userName');
-    this.username.next(localStorage.getItem('userName') || '');
+    this.username.next('');
   }
 
   public getUserInfo(): BehaviorSubject<string> {
