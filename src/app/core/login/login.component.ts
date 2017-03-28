@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from './../../shared/auth/auth.service';
+import { LoaderBlockService } from './../../shared/loaderBlock/loaderBlock.service';
 
 @Component({
   selector: 'login',
@@ -10,12 +11,16 @@ class LoginComponent {
   public name: string = '';
   public password: string = '';
 
-  constructor(public authService: AuthService) {
+  constructor(public authService: AuthService, public loaderBlockService: LoaderBlockService) {
     // lint
   }
 
   public login(): void {
-    this.authService.login(this.name);
+    this.loaderBlockService.show();
+    setTimeout(() => {
+      this.authService.login(this.name);
+      this.loaderBlockService.hide();
+    }, 500);
   }
 }
 
