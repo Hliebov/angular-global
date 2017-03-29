@@ -2,14 +2,17 @@
   <p>Name:</p>
   <input [(ngModel)]="name"
          (keyup.enter)="login()"
+         [disabled]="!!loaderBlockIsShown"
          placeholder="Enter your name">
   <p>Password:</p>
   <input [(ngModel)]="password"
          (keyup.enter)="login()"
+         [disabled]="!!loaderBlockIsShown"
          placeholder="Enter your password">
-  <div
+  <button
     (click)="login()"
+    [disabled]="!!loaderBlockIsShown"
     class="waves-effect blue accent-2 btn">
     Login
-  </div>
+  </button>
 </div>

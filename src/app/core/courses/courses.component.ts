@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Course } from './../course/course.type';
 import { CoursesService } from './courses.service';
 import { Modal } from 'angular2-modal/plugins/bootstrap';
+import { LoaderBlockService } from './../../shared/loaderBlock/loaderBlock.service';
 
 @Component({
   selector: 'courses',
@@ -11,6 +12,7 @@ class CoursesComponent implements OnInit {
   public courses: Course[] = [];
 
   constructor( public coursesService: CoursesService,
+               public loaderBlockService: LoaderBlockService,
                public modal: Modal) {
     // lint
   }
@@ -38,7 +40,11 @@ class CoursesComponent implements OnInit {
     this.openConfirmModal(message)
       .then((result) => {
         if (result) {
-          this.coursesService.removeCourse(course._id);
+          this.loaderBlockService.show();
+          setTimeout(() => {
+            this.loaderBlockService.hide();
+            this.coursesService.removeCourse(course._id);
+          }, 500);
         }
       })
       .catch((e) => {

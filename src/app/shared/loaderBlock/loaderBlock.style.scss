@@ -1,4 +1,7 @@
 .loader {
+  position: absolute;
+  top: -300px;
+  z-index: 10;
   margin: 100px auto;
   font-size: 25px;
   width: 1em;

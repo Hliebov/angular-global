@@ -10,9 +10,12 @@ import { LoaderBlockService } from './../../shared/loaderBlock/loaderBlock.servi
 class LoginComponent {
   public name: string = '';
   public password: string = '';
+  public loaderBlockIsShown: boolean = false;
 
   constructor(public authService: AuthService, public loaderBlockService: LoaderBlockService) {
-    // lint
+    loaderBlockService.isShown.subscribe((show) => {
+      this.loaderBlockIsShown = show;
+    });
   }
 
   public login(): void {
@@ -20,7 +23,7 @@ class LoginComponent {
     setTimeout(() => {
       this.authService.login(this.name);
       this.loaderBlockService.hide();
-    }, 500);
+    }, 5000);
   }
 }
 
