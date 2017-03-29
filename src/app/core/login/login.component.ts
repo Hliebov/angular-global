@@ -23,7 +23,7 @@ class LoginComponent {
     setTimeout(() => {
       this.authService.login(this.name);
       this.loaderBlockService.hide();
-    }, 5000);
+    }, 500);
   }
 }
 
