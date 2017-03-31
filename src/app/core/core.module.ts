@@ -12,13 +12,15 @@ import { FormsModule } from '@angular/forms';
 import { CoursesService } from './courses/courses.service';
 import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
+import { SharedModule } from './../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ModalModule.forRoot(),
-    BootstrapModalModule
+    BootstrapModalModule,
+    SharedModule
   ],
   exports: [
     CourseComponent,

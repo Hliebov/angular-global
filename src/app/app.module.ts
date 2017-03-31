@@ -59,8 +59,8 @@ type StoreType = {
     BrowserModule,
     MaterializeModule,
     FormsModule,
-    CoreModule,
     SharedModule,
+    CoreModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
