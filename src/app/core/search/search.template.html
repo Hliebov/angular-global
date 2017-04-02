@@ -14,7 +14,7 @@
     </div>
   </div>
   <div class="search__find">
-    <a (click)="onSearch()"
+    <a (click)="onSearch(searchQuery)"
        [ngClass]="{'disabled': !searchQuery.length}"
        class="waves-effect blue-grey darken-4 btn">
       find

@@ -1,5 +1,6 @@
 .course {
   margin-top: 40px;
+  padding: 10px;
   &__title {
     display: inline-block;
     float: left;
@@ -27,5 +28,8 @@
       display: block;
     }
   }
+}
 
+.rated {
+  background: rgba(255, 234, 0, 0.18);
 }

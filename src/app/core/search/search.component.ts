@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CoursesService } from './../courses/courses.service';
 
 @Component({
   selector: 'search',
@@ -8,8 +9,12 @@ import { Component } from '@angular/core';
 class SearchComponent {
   public searchQuery: string = '';
 
-  public onSearch(): void {
-    console.log(this.searchQuery);
+  constructor(public coursesService: CoursesService) {
+    // lint
+  }
+
+  public onSearch(searchQuery: string): void {
+    this.coursesService.onSearch(searchQuery);
   }
 
   public clearQuery(): void {

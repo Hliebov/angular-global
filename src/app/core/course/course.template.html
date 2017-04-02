@@ -1,18 +1,26 @@
-<div class="course" [changePlate]="course">
+<div class="course"
+     [changePlate]="course"
+      [ngClass]="{rated: course.topRated}">
   <div
     class="course__title"
-    [innerText]="course.title">
+    [innerText]="course.title | uppercase">
   </div>
 
   <div
     class="course__date"
-    [innerText]="getProperDate(course.date)">
+    [innerText]="course.date | date:'fullDate'">
   </div>
 
   <div
     class="course__duration"
-    [innerText]="getDurationInMinutes(course.duration)">
+    [innerText]="course.duration | myDurationPipe">
   </div>
+
+  <i
+    *ngIf="course.topRated"
+    class="material-icons">
+    grade
+  </i>
 
   <div class="clearfix"></div>
   <div

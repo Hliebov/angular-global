@@ -6,7 +6,8 @@ import { LoaderBlockService } from './../../shared/loaderBlock/loaderBlock.servi
 
 @Component({
   selector: 'courses',
-  templateUrl: 'courses.template.html'
+  templateUrl: 'courses.template.html',
+  styleUrls: ['courses.style.scss']
 })
 class CoursesComponent implements OnInit {
   public courses: Course[] = [];

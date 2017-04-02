@@ -13,6 +13,9 @@ import { CoursesService } from './courses/courses.service';
 import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 import { SharedModule } from './../shared/shared.module';
+import { DurationPipe } from './../shared/durationPipe/durationPipe';
+import { OrderByPipe } from './../shared/orderByPipe/orderByPipe';
+import { FilterPipe } from './../shared/filterPipe/filterPipe';
 
 @NgModule({
   imports: [
@@ -30,7 +33,10 @@ import { SharedModule } from './../shared/shared.module';
     HeaderComponent,
     FooterComponent,
     LogoComponent,
-    LoginComponent
+    LoginComponent,
+    DurationPipe,
+    OrderByPipe,
+    FilterPipe
   ],
   declarations: [
     CourseComponent,
@@ -40,7 +46,10 @@ import { SharedModule } from './../shared/shared.module';
     HeaderComponent,
     FooterComponent,
     LogoComponent,
-    LoginComponent
+    LoginComponent,
+    DurationPipe,
+    OrderByPipe,
+    FilterPipe
   ],
   providers: [
     CoursesService

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Course } from '../course/course.type';
-import { mockCourses } from './courses.mock';
+import { mockCourses, course } from './courses.mock';
 import { Observable } from 'rxjs';
+import { FilterPipe } from './../../shared/filterPipe/filterPipe';
 
 @Injectable()
 class CoursesService {
@@ -12,7 +13,14 @@ class CoursesService {
   }
 
   public createCourse(): void {
-    this.courses.push(this.courses[0]);
+    this.courses.push(course);
+  }
+
+  public onSearch(searchQuery) {
+    let filterPipe = new FilterPipe();
+    let cs = filterPipe.transform(this.courses, searchQuery);
+    this.courses.splice(0, this.courses.length);
+    this.courses.push.apply(this.courses, cs);
   }
 
   public getCourseById(id: string): Course {

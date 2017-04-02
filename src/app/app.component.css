@@ -5,3 +5,11 @@ html, body{
 a.active {
   background-color: gray;
 }
+
+.green-bordered {
+  box-shadow: 0 0 20px green;
+}
+
+.blue-bordered {
+  box-shadow: 0 0 20px blue;
+}
