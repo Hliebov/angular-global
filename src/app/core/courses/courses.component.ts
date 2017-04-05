@@ -1,16 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Course } from './../course/course.type';
 import { CoursesService } from './courses.service';
 import { Modal } from 'angular2-modal/plugins/bootstrap';
 import { LoaderBlockService } from './../../shared/loaderBlock/loaderBlock.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'courses',
   templateUrl: 'courses.template.html',
   styleUrls: ['courses.style.scss']
 })
-class CoursesComponent implements OnInit {
+class CoursesComponent implements OnInit, OnDestroy {
   public courses: Course[] = [];
+  public subscription: Subscription;
 
   constructor( public coursesService: CoursesService,
                public loaderBlockService: LoaderBlockService,
@@ -19,7 +21,7 @@ class CoursesComponent implements OnInit {
   }
 
   public ngOnInit() {
-    this.coursesService.getList().subscribe((courses) => {
+    this.subscription = this.coursesService.getList().subscribe((courses) => {
       this.courses = courses;
     });
   }
@@ -51,6 +53,10 @@ class CoursesComponent implements OnInit {
       .catch((e) => {
         console.log(e);
       });
+  }
+
+  public ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }
 
