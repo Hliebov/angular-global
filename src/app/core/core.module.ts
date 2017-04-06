@@ -16,6 +16,8 @@ import { SharedModule } from './../shared/shared.module';
 import { DurationPipe } from './../shared/durationPipe/durationPipe';
 import { OrderByPipe } from './../shared/orderByPipe/orderByPipe';
 import { FilterPipe } from './../shared/filterPipe/filterPipe';
+import { EditCourseComponent } from './editCourse/editCourse.component';
+import { EditCourseService } from './editCourse/editCourse.service';
 
 @NgModule({
   imports: [
@@ -29,6 +31,7 @@ import { FilterPipe } from './../shared/filterPipe/filterPipe';
     CourseComponent,
     CoursesComponent,
     AddCourseComponent,
+    EditCourseComponent,
     SearchComponent,
     HeaderComponent,
     FooterComponent,
@@ -42,6 +45,7 @@ import { FilterPipe } from './../shared/filterPipe/filterPipe';
     CourseComponent,
     CoursesComponent,
     AddCourseComponent,
+    EditCourseComponent,
     SearchComponent,
     HeaderComponent,
     FooterComponent,
@@ -52,7 +56,8 @@ import { FilterPipe } from './../shared/filterPipe/filterPipe';
     FilterPipe
   ],
   providers: [
-    CoursesService
+    CoursesService,
+    EditCourseService
   ]
 })
 class CoreModule {

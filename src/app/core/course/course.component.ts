@@ -5,6 +5,7 @@ import { Component,
   ChangeDetectionStrategy,
   NgZone } from '@angular/core';
 import { Course } from './course.type';
+import { EditCourseService } from './../editCourse/editCourse.service';
 
 let t1 = 0;
 
@@ -18,7 +19,7 @@ class CourseComponent {
   @Input() public course: Course;
   @Output() public courseOutput: EventEmitter<Course> = new EventEmitter();
 
-  constructor(private ngZone: NgZone) {
+  constructor(private ngZone: NgZone, public editCourseService: EditCourseService) {
     this.ngZone.onStable.subscribe(this.onZoneStable);
     this.ngZone.onUnstable.subscribe(this.onZoneUnstable);
   }
@@ -43,6 +44,10 @@ class CourseComponent {
 
   public onCourseDelete(course: Course): void {
     this.courseOutput.emit(course);
+  }
+
+  public editCourse(course: Course) {
+    this.editCourseService.editCourse(course);
   }
 }
 

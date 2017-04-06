@@ -1,13 +1,14 @@
 <div>
   <header></header>
   <div class="clearfix"></div>
-  <div class="main" *ngIf="username">
+  <div class="main" *ngIf="username && !isEditing">
     <search></search>
     <add-course></add-course>
     <div class="clearfix"></div>
     <courses></courses>
   </div>
   <login *ngIf="!username"></login>
+  <edit-course *ngIf="isEditing"></edit-course>
   <loader-block></loader-block>
   <footer></footer>
 </div>
