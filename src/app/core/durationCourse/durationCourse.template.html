@@ -1,0 +1,10 @@
+<div class="duration">
+  Duration
+  <input
+    [(ngModel)]="duration"
+    type="number">
+  <div
+    [innerText]="duration | myDurationPipe : 'min'"
+    class="duration_prop">
+  </div>
+</div>

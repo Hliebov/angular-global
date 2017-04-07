@@ -18,6 +18,7 @@ import { OrderByPipe } from './../shared/orderByPipe/orderByPipe';
 import { FilterPipe } from './../shared/filterPipe/filterPipe';
 import { EditCourseComponent } from './editCourse/editCourse.component';
 import { EditCourseService } from './editCourse/editCourse.service';
+import { DurationCourseComponent } from './durationCourse/durationCourse';
 
 @NgModule({
   imports: [
@@ -39,7 +40,8 @@ import { EditCourseService } from './editCourse/editCourse.service';
     LoginComponent,
     DurationPipe,
     OrderByPipe,
-    FilterPipe
+    FilterPipe,
+    DurationCourseComponent
   ],
   declarations: [
     CourseComponent,
@@ -53,7 +55,8 @@ import { EditCourseService } from './editCourse/editCourse.service';
     LoginComponent,
     DurationPipe,
     OrderByPipe,
-    FilterPipe
+    FilterPipe,
+    DurationCourseComponent
   ],
   providers: [
     CoursesService,
