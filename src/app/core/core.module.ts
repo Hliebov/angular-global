@@ -16,6 +16,7 @@ import { SharedModule } from './../shared/shared.module';
 import { DurationPipe } from './../shared/durationPipe/durationPipe';
 import { OrderByPipe } from './../shared/orderByPipe/orderByPipe';
 import { FilterPipe } from './../shared/filterPipe/filterPipe';
+import { FilterDatePipe } from './../shared/filterDate/filterDate';
 import { EditCourseComponent } from './editCourse/editCourse.component';
 import { EditCourseService } from './editCourse/editCourse.service';
 import { DurationCourseComponent } from './durationCourse/durationCourse';
@@ -41,6 +42,7 @@ import { DurationCourseComponent } from './durationCourse/durationCourse';
     DurationPipe,
     OrderByPipe,
     FilterPipe,
+    FilterDatePipe,
     DurationCourseComponent
   ],
   declarations: [
@@ -56,6 +58,7 @@ import { DurationCourseComponent } from './durationCourse/durationCourse';
     DurationPipe,
     OrderByPipe,
     FilterPipe,
+    FilterDatePipe,
     DurationCourseComponent
   ],
   providers: [

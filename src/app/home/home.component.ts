@@ -27,5 +27,6 @@ export class HomeComponent implements OnDestroy {
 
   public ngOnDestroy() {
     this.userInfoSubscription.unsubscribe();
+    this.isEditingCourseSubscription.unsubscribe();
   }
 }

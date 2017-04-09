@@ -17,9 +17,9 @@ class DurationPipe implements PipeTransform {
     if (durationInMinutes < 60) {
       return durationInMinutes + ' min';
     } else {
-      let minutes = durationInMinutes % 60;
+      let min = durationInMinutes % 60;
       let hours = Math.floor(durationInMinutes / 60);
-      return `${hours}h ${minutes}min`;
+      return `${hours}h ${min}min`;
     }
   }
 }

@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { ReplaySubject } from 'rxjs';
 
 @Injectable()
 class AuthService {
-  public username: BehaviorSubject<string>;
+  public username: ReplaySubject<string>;
 
   constructor() {
-    this.username = new BehaviorSubject(localStorage.getItem('userName') || '');
+    this.username = new ReplaySubject(1);
+    this.username.next(localStorage.getItem('userName') || '');
   }
 
   public login(name: string): void {
@@ -21,7 +22,7 @@ class AuthService {
     this.username.next('');
   }
 
-  public getUserInfo(): BehaviorSubject<string> {
+  public getUserInfo(): ReplaySubject<string> {
     return this.username;
   }
 }

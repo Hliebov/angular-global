@@ -2,8 +2,8 @@ import { Component,
   Input,
   Output,
   EventEmitter,
-  ChangeDetectionStrategy,
-  NgZone } from '@angular/core';
+  ChangeDetectionStrategy
+} from '@angular/core';
 import { Course } from './course.type';
 import { EditCourseService } from './../editCourse/editCourse.service';
 
@@ -19,19 +19,8 @@ class CourseComponent {
   @Input() public course: Course;
   @Output() public courseOutput: EventEmitter<Course> = new EventEmitter();
 
-  constructor(private ngZone: NgZone, public editCourseService: EditCourseService) {
-    this.ngZone.onStable.subscribe(this.onZoneStable);
-    this.ngZone.onUnstable.subscribe(this.onZoneUnstable);
-  }
-
-  public onZoneStable() {
-    let timeDiff = +new Date() - t1;
-    console.log('We are stable, execution time: ', timeDiff);
-  }
-
-  public onZoneUnstable() {
-    t1 = +new Date();
-    console.log('We are unstable');
+  constructor(public editCourseService: EditCourseService) {
+    // lint
   }
 
   public getProperDate(date: number): string {

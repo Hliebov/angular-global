@@ -7,7 +7,7 @@ let mockCourses: Course[] = [
     description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus 
                   excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?`,
     duration: 80 * 60 * 1000,
-    date: +new Date(2017, 2, 27),
+    date: +new Date(2017, 3, 9),
     topRated: false
   },
   {
@@ -25,7 +25,7 @@ let mockCourses: Course[] = [
     description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus 
                   excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?`,
     duration: 45 * 60 * 1000,
-    date: +new Date(2017, 3, 10),
+    date: +new Date(2017, 3, 20),
     topRated: true
   }
 ];
