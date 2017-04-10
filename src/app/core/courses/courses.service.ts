@@ -6,9 +6,21 @@ import { FilterPipe } from './../../shared/filterPipe/filterPipe';
 
 @Injectable()
 class CoursesService {
-  public courses: Course[] = mockCourses;
+  public courses: Course[];
 
   public getList() {
+    // mapping mocked (aka BE) response to data model, done for "title" and "duration" fields:
+    this.courses = mockCourses.map((course) => {
+      return {
+        _id: course._id,
+        title: course.noTitle,
+        description: course.noDescription,
+        duration: course.duration,
+        date: course.date,
+        topRated: course.topRated,
+      }
+    });
+
     return Observable.of(this.courses);
   }
 

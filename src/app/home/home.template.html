@@ -8,7 +8,7 @@
     <courses></courses>
   </div>
   <login *ngIf="!username"></login>
-  <edit-course *ngIf="isEditing"></edit-course>
+  <edit-course *ngIf="isEditing && username"></edit-course>
   <loader-block></loader-block>
   <footer></footer>
 </div>
