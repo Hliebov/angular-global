@@ -6,6 +6,10 @@ a.active {
   background-color: gray;
 }
 
+.clearfix {
+  clear: both;
+}
+
 .green-bordered {
   box-shadow: 0 0 20px green;
 }

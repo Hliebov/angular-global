@@ -1,3 +1,11 @@
 .duration {
+  &__inp {
+    width: 30%;
+    float: left;
+  }
 
+  &__prop {
+    width: 25%;
+    float: right;
+  }
 }
