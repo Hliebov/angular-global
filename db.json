@@ -25,11 +25,11 @@
       "topRated": true
     }
   ],
-  "comments": [
+  "users": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "admin",
+      "password": "admin"
     }
   ],
   "profile": {
