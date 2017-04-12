@@ -3,25 +3,42 @@ import { Course } from '../course/course.type';
 import { mockCourses, course } from './courses.mock';
 import { Observable } from 'rxjs';
 import { FilterPipe } from './../../shared/filterPipe/filterPipe';
+import { Http } from '@angular/http';
 
 @Injectable()
 class CoursesService {
   public courses: Course[];
 
+  constructor(public http: Http) {
+    // lint
+  }
+
   public getList() {
     // mapping mocked (aka BE) response to data model, done for "title" and "duration" fields:
-    this.courses = mockCourses.map((course) => {
-      return {
-        _id: course._id,
-        title: course.noTitle,
-        description: course.noDescription,
-        duration: course.duration,
-        date: course.date,
-        topRated: course.topRated,
-      }
-    });
+    // this.courses = mockCourses.map((course) => {
+    //   return {
+    //     _id: course._id,
+    //     title: course.noTitle,
+    //     description: course.noDescription,
+    //     duration: course.duration,
+    //     date: course.date,
+    //     topRated: course.topRated,
+    //   }
+    // });
+    //
+    // return Observable.of(this.courses);
 
-    return Observable.of(this.courses);
+    return this.http.get('http://localhost:3030/courses')
+      // .map((course) => {
+      //     return {
+      //       _id: course._id,
+      //       title: course.noTitle,
+      //       description: course.noDescription,
+      //       duration: course.duration,
+      //       date: course.date,
+      //       topRated: course.topRated,
+      //     }
+      //   });
   }
 
   public createCourse(): void {

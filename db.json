@@ -1,9 +1,28 @@
 {
-  "posts": [
+  "courses": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "_id": "1",
+      "noTitle": "Video course 1",
+      "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
+      "duration": 4800000,
+      "date": 1491685200000,
+      "topRated": false
+    },
+    {
+      "_id": "2",
+      "noTitle": "Video course 2",
+      "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
+      "duration": 7200000,
+      "date": 1488664800000,
+      "topRated": true
+    },
+    {
+      "_id": "3",
+      "noTitle": "Video course 3",
+      "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
+      "duration": 2700000,
+      "date": 1492635600000,
+      "topRated": true
     }
   ],
   "comments": [

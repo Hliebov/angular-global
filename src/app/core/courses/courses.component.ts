@@ -22,7 +22,8 @@ class CoursesComponent implements OnInit, OnDestroy {
 
   public ngOnInit() {
     this.subscription = this.coursesService.getList().subscribe((courses) => {
-      this.courses = courses;
+      console.log(courses)
+      this.courses = courses.json();
     });
   }
 
