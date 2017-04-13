@@ -22,10 +22,11 @@ class LoginComponent implements OnDestroy {
 
   public login(): void {
     this.loaderBlockService.show();
-    setTimeout(() => {
-      this.authService.login(this.name);
-      this.loaderBlockService.hide();
-    }, 500);
+    this.authService.login(this.name, this.password);
+    // setTimeout(() => {
+    //   this.authService.login(this.name);
+    //   this.loaderBlockService.hide();
+    // }, 500);
   }
 
   public ngOnDestroy() {

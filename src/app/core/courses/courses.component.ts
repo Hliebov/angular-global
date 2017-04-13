@@ -23,7 +23,7 @@ class CoursesComponent implements OnInit, OnDestroy {
   public ngOnInit() {
     this.subscription = this.coursesService.getList().subscribe((courses) => {
         this.courses = courses.json().
-          forEach((course) => {
+          map((course) => {
             return {
               _id: course._id,
               title: course.noTitle,
@@ -31,7 +31,7 @@ class CoursesComponent implements OnInit, OnDestroy {
               duration: course.duration,
               date: course.date,
               topRated: course.topRated,
-            }
+            };
           });
     });
   }

@@ -14,7 +14,7 @@ class CoursesService {
   }
 
   public getList() {
-    return this.http.get('http://localhost:3030/courses')
+    return this.http.get('http://localhost:3030/courses');
   }
 
   public createCourse(): void {
