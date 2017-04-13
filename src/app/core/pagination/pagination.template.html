@@ -1,0 +1,8 @@
+<div class="pagination">
+  <div
+    *ngFor="let page of pages"
+    class="pagination__control"
+    (click)="getCoursesByPageNumber(page)">
+    {{page}}
+  </div>
+</div>

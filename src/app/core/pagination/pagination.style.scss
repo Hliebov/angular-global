@@ -1,0 +1,12 @@
+.pagination {
+  text-align: center;
+  &__control {
+    background: #448AFF ;
+    color: #ffffff;
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+}

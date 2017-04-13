@@ -23,13 +23,110 @@
       "duration": 2700000,
       "date": 1492635600000,
       "topRated": true
+    },
+    {
+      "_id": "4",
+      "noTitle": "Video course 4",
+      "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
+      "duration": 4800000,
+      "date": 1491685200000,
+      "topRated": false
+    },
+    {
+      "_id": "5",
+      "noTitle": "Video course 5",
+      "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
+      "duration": 7200000,
+      "date": 1488664800000,
+      "topRated": true
+    },
+    {
+      "_id": "6",
+      "noTitle": "Video course 6",
+      "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
+      "duration": 2700000,
+      "date": 1492635600000,
+      "topRated": true
+    },
+    {
+      "_id": "7",
+      "noTitle": "Video course 7",
+      "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
+      "duration": 4800000,
+      "date": 1491685200000,
+      "topRated": false
+    },
+    {
+      "_id": "8",
+      "noTitle": "Video course 8",
+      "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
+      "duration": 7200000,
+      "date": 1488664800000,
+      "topRated": true
+    },
+    {
+      "_id": "9",
+      "noTitle": "Video course 9",
+      "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
+      "duration": 2700000,
+      "date": 1492635600000,
+      "topRated": true
+    },
+    {
+      "_id": "10",
+      "noTitle": "Video course 10",
+      "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
+      "duration": 4800000,
+      "date": 1491685200000,
+      "topRated": false
+    },
+    {
+      "_id": "11",
+      "noTitle": "Video course 11",
+      "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
+      "duration": 7200000,
+      "date": 1488664800000,
+      "topRated": true
+    },
+    {
+      "_id": "12",
+      "noTitle": "Video course 12",
+      "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
+      "duration": 2700000,
+      "date": 1492635600000,
+      "topRated": true
+    },
+    {
+      "_id": "13",
+      "noTitle": "Video course 13",
+      "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
+      "duration": 4800000,
+      "date": 1491685200000,
+      "topRated": false
+    },
+    {
+      "_id": "14",
+      "noTitle": "Video course 14",
+      "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
+      "duration": 7200000,
+      "date": 1488664800000,
+      "topRated": true
+    },
+    {
+      "_id": "15",
+      "noTitle": "Video course 15",
+      "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
+      "duration": 2700000,
+      "date": 1492635600000,
+      "topRated": true
     }
   ],
   "users": [
     {
       "id": 1,
       "name": "admin",
-      "password": "admin"
+      "password": "admin",
+      "fakeToken": "58ebfdf7f1f558c5c86e17f6"
     }
   ],
   "profile": {

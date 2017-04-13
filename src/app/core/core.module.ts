@@ -20,6 +20,8 @@ import { FilterDatePipe } from './../shared/filterDate/filterDate';
 import { EditCourseComponent } from './editCourse/editCourse.component';
 import { EditCourseService } from './editCourse/editCourse.service';
 import { DurationCourseComponent } from './durationCourse/durationCourse';
+import { PaginationService } from './pagination/paginationService';
+import { PaginationComponent } from './pagination/paginationComponent';
 
 @NgModule({
   imports: [
@@ -43,7 +45,8 @@ import { DurationCourseComponent } from './durationCourse/durationCourse';
     OrderByPipe,
     FilterPipe,
     FilterDatePipe,
-    DurationCourseComponent
+    DurationCourseComponent,
+    PaginationComponent
   ],
   declarations: [
     CourseComponent,
@@ -59,11 +62,13 @@ import { DurationCourseComponent } from './durationCourse/durationCourse';
     OrderByPipe,
     FilterPipe,
     FilterDatePipe,
-    DurationCourseComponent
+    DurationCourseComponent,
+    PaginationComponent
   ],
   providers: [
     CoursesService,
-    EditCourseService
+    EditCourseService,
+    PaginationService
   ]
 })
 class CoreModule {
