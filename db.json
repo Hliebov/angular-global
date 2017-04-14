@@ -1,120 +1,120 @@
 {
   "courses": [
     {
-      "_id": "1",
-      "noTitle": "Video course 1",
+      "id": "1",
+      "title": "Video course 1",
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 4800000,
       "date": 1491685200000,
       "topRated": false
     },
     {
-      "_id": "2",
-      "noTitle": "Video course 2",
+      "id": "2",
+      "title": "Video course 2",
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 7200000,
       "date": 1488664800000,
       "topRated": true
     },
     {
-      "_id": "3",
-      "noTitle": "Video course 3",
+      "id": "3",
+      "title": "Video course 3",
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 2700000,
       "date": 1492635600000,
       "topRated": true
     },
     {
-      "_id": "4",
-      "noTitle": "Video course 4",
+      "id": "4",
+      "title": "Video course 4",
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 4800000,
       "date": 1491685200000,
       "topRated": false
     },
     {
-      "_id": "5",
-      "noTitle": "Video course 5",
+      "id": "5",
+      "title": "Video course 5",
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 7200000,
       "date": 1488664800000,
       "topRated": true
     },
     {
-      "_id": "6",
-      "noTitle": "Video course 6",
+      "id": "6",
+      "title": "Video course 6",
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 2700000,
       "date": 1492635600000,
       "topRated": true
     },
     {
-      "_id": "7",
-      "noTitle": "Video course 7",
+      "id": "7",
+      "title": "Video course 7",
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 4800000,
       "date": 1491685200000,
       "topRated": false
     },
     {
-      "_id": "8",
-      "noTitle": "Video course 8",
+      "id": "8",
+      "title": "Video course 8",
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 7200000,
       "date": 1488664800000,
       "topRated": true
     },
     {
-      "_id": "9",
-      "noTitle": "Video course 9",
+      "id": "9",
+      "title": "Video course 9",
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 2700000,
       "date": 1492635600000,
       "topRated": true
     },
     {
-      "_id": "10",
-      "noTitle": "Video course 10",
+      "id": "10",
+      "title": "Video course 10",
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 4800000,
       "date": 1491685200000,
       "topRated": false
     },
     {
-      "_id": "11",
-      "noTitle": "Video course 11",
+      "id": "11",
+      "title": "Video course 11",
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 7200000,
       "date": 1488664800000,
       "topRated": true
     },
     {
-      "_id": "12",
-      "noTitle": "Video course 12",
+      "id": "12",
+      "title": "Video course 12",
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 2700000,
       "date": 1492635600000,
       "topRated": true
     },
     {
-      "_id": "13",
-      "noTitle": "Video course 13",
+      "id": "13",
+      "title": "Video course 13",
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 4800000,
       "date": 1491685200000,
       "topRated": false
     },
     {
-      "_id": "14",
-      "noTitle": "Video course 14",
+      "id": "14",
+      "title": "Video course 14",
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 7200000,
       "date": 1488664800000,
       "topRated": true
     },
     {
-      "_id": "15",
-      "noTitle": "Video course 15",
+      "id": "15",
+      "title": "Video course 15",
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 2700000,
       "date": 1492635600000,

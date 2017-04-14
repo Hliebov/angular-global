@@ -5,7 +5,7 @@
     <search></search>
     <add-course></add-course>
     <div class="clearfix"></div>
-    <pagination></pagination>
+    <pagination *ngIf="username && !isEditing"></pagination>
     <courses></courses>
   </div>
   <login *ngIf="!username"></login>

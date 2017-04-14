@@ -19,6 +19,7 @@ class SearchComponent {
 
   public clearQuery(): void {
     this.searchQuery = '';
+    this.coursesService.getCoursesByPageNumber(1);
   }
 }
 
