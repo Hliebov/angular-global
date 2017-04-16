@@ -2,6 +2,7 @@
   <div
     *ngFor="let page of pages"
     class="pagination__control"
+    [ngClass]="{'pagination__control_active': activePage === page }"
     (click)="getCoursesByPageNumber(page)">
     {{page}}
   </div>

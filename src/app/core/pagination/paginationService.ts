@@ -2,19 +2,24 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Subject } from 'rxjs';
 import { CoursesService } from '../courses/courses.service';
+import { AuthorizedHttpService } from './../../shared/authorizedHttp/authorizedHttp.service';
 
 const itemsPerPage = 3;
 
 @Injectable()
 class PaginationService {
   public pages: Subject<number[]> = new Subject();
-  constructor(public http: Http, public coursesService: CoursesService) {
+  public activePage: Subject<number> = new Subject();
+
+  constructor(public http: Http,
+              public coursesService: CoursesService,
+              public aHttp: AuthorizedHttpService) {
     // lint;
   }
 
-  getPagesNumber() {
+  public getPagesNumber() {
     let pages;
-    this.http.get('http://localhost:3030/courses')
+    this.aHttp.get('http://localhost:3030/courses')
       .subscribe((courses) => {
         let items = courses.json().length;
         pages = Math.ceil(items / itemsPerPage);
@@ -27,6 +32,7 @@ class PaginationService {
   }
 
   public getCoursesByPageNumber(pageNumber: number) {
+    this.activePage.next(pageNumber);
     this.coursesService.getCoursesByPageNumber(pageNumber);
   }
 }

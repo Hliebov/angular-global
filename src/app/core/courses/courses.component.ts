@@ -22,7 +22,7 @@ class CoursesComponent implements OnInit, OnDestroy {
 
   public ngOnInit() {
     this.subscription = this.coursesService.courses.subscribe((courses) => {
-        this.courses = courses;
+      this.courses = courses;
     });
   }
 

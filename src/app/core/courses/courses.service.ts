@@ -1,17 +1,19 @@
-import { Injectable, OnInit} from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Course } from '../course/course.type';
-import { Observable, Subject } from 'rxjs';
-import { FilterPipe } from './../../shared/filterPipe/filterPipe';
+import { Subject } from 'rxjs';
 import { Http, Response } from '@angular/http';
-import { PaginationService } from './../pagination/paginationService';
+import { AuthorizedHttpService } from './../../shared/authorizedHttp/authorizedHttp.service';
+import { LoaderBlockService } from './../../shared/loaderBlock/loaderBlock.service';
 
 const pageLimit = 3;
 
 @Injectable()
-class CoursesService{
+class CoursesService {
   public courses: Subject<Course[]> = new Subject();
 
-  constructor(public http: Http) {
+  constructor(public http: Http,
+              public aHttp: AuthorizedHttpService,
+              public loaderBlock: LoaderBlockService) {
     this.getCoursesByPageNumber(1);
   }
 
@@ -34,15 +36,17 @@ class CoursesService{
   }
 
   public getCoursesByPageNumber(pageNumber: number): void {
-    this.http.get(`http://localhost:3030/courses?_page=${pageNumber}&_limit=${pageLimit}`)
+    this.loaderBlock.show();
+    this.aHttp.get(`http://localhost:3030/courses?_page=${pageNumber}&_limit=${pageLimit}`)
       .subscribe((courses) => {
+        this.loaderBlock.hide();
         let list = this.prepareCourses(courses);
         this.courses.next(list);
       });
   }
 
   public onSearch(searchQuery: string): void {
-    this.http.get(`http://localhost:3030/courses?title_like=${searchQuery}`)
+    this.aHttp.get(`http://localhost:3030/courses?title_like=${searchQuery}`)
       .subscribe((courses) => {
         let list = this.prepareCourses(courses);
         this.courses.next(list);
@@ -54,17 +58,12 @@ class CoursesService{
   }
 
   public removeCourse(id: string): void {
-    console.log(id);
-    this.http.delete(`http://localhost:3030/courses/${id}`);
-    // let index;
-    // this.courses.forEach((course) => {
-    //   if (course._id === id) {
-    //     index = this.courses.indexOf(course);
-    //   }
-    // });
-    // if (index > -1) {
-    //   this.courses.splice(index, 1);
-    // }
+    this.aHttp.delete(`http://localhost:3030/courses/${id}`)
+      .subscribe((response) => {
+        if (response.status === 200) {
+          this.getCoursesByPageNumber(1);
+        }
+      });
   }
 }
 

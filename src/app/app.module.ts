@@ -33,6 +33,7 @@ import 'materialize-css';
 import 'angular2-materialize';
 import { MaterializeModule } from 'angular2-materialize';
 import { SharedModule } from './shared/shared.module';
+import { AuthorizedHttpService } from './shared/authorizedHttp/authorizedHttp.service';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -66,7 +67,8 @@ type StoreType = {
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
-    APP_PROVIDERS
+    APP_PROVIDERS,
+    AuthorizedHttpService
   ]
 })
 export class AppModule {

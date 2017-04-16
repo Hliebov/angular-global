@@ -10,3 +10,17 @@ search {
 add-course {
   float: right;
 }
+
+main {
+  min-height: calc(100% - 170px);
+}
+
+.home {
+  height: 100%;
+}
+
+loader-block {
+  position: fixed;
+  top: 500px;
+  left: 50%;
+}
