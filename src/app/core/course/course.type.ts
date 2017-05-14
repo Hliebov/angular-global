@@ -1,3 +1,7 @@
+interface Author {
+  name: string;
+  checked: boolean;
+}
 interface Course {
   _id: string;
   title: string;
@@ -5,6 +9,7 @@ interface Course {
   duration: number;
   date: number;
   topRated: boolean;
+  authors: Author[]
 }
 
 export { Course };

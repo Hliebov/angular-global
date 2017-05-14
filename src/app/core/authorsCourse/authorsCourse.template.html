@@ -1,0 +1,14 @@
+<div class="authors">
+  <ul>
+    <li *ngFor="let author of authors">
+      <p>
+        <input type="checkbox"
+               #aut
+               class="filled-in" id="{{author.name}}"
+               (change)="onAuthorChange(author, aut.checked)"
+               [(ngModel)]="author.checked"/>
+        <label for="{{author.name}}">{{author.name}}</label>
+      </p>
+    </li>
+  </ul>
+</div>

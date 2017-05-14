@@ -31,6 +31,7 @@ class CoursesService {
           duration: course.duration,
           date: course.date,
           topRated: course.topRated,
+          authors: course.authors
         };
       });
   }
@@ -53,8 +54,19 @@ class CoursesService {
       });
   }
 
-  public updateCourse(): void {
-    // lint;
+  public updateCourse(form, course): void {
+    this.aHttp.put(`http://localhost:3030/courses/${course._id}`, {
+      id: course._id,
+      title: form.title,
+      noDescription: form.description,
+      duration: course.duration,
+      date: course.date,
+      topRated: course.topRated,
+      authors: course.authors
+    })
+      .subscribe((response) => {
+
+      });
   }
 
   public removeCourse(id: string): void {

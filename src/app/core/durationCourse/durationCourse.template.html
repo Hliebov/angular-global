@@ -2,11 +2,11 @@
   Duration
   <div class="clearfix"></div>
   <input
-    [(ngModel)]="duration"
+    [(ngModel)]="value"
     class="duration__inp"
     type="number">
   <div
-    [innerText]="duration | myDurationPipe : 'min'"
+    [innerText]="value | myDurationPipe : 'min'"
     class="duration__prop">
   </div>
 </div>

@@ -4,9 +4,11 @@ import { Course } from './../course/course.type';
 
 @Injectable()
 class EditCourseService {
+  public activeCourse: Course;
   public isEditing: ReplaySubject<boolean> = new ReplaySubject(1);
 
   public editCourse(course: Course) {
+    this.activeCourse = course;
     this.isEditing.next(true);
   }
 

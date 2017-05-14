@@ -3,26 +3,92 @@
     {
       "id": "1",
       "title": "Video course 1",
-      "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
-      "duration": 4800000,
-      "date": 1491685200000,
-      "topRated": false
+      "noDescription": "555Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
+      "duration": 2700000,
+      "date": 1349902800000,
+      "topRated": true,
+      "authors": [
+        {
+          "name": "Author 1",
+          "checked": false
+        },
+        {
+          "name": "Author 2",
+          "checked": true
+        },
+        {
+          "name": "Author 3",
+          "checked": false
+        },
+        {
+          "name": "Author 4",
+          "checked": true
+        },
+        {
+          "name": "Author 5",
+          "checked": true
+        }
+      ]
     },
     {
       "id": "4",
       "title": "Video course 4",
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 4800000,
-      "date": 1491685200000,
-      "topRated": false
+      "date": 1494789352006,
+      "topRated": false,
+      "authors": [
+        {
+          "name": "Author 1",
+          "checked": false
+        },
+        {
+          "name": "Author 2",
+          "checked": true
+        },
+        {
+          "name": "Author 3",
+          "checked": false
+        },
+        {
+          "name": "Author 4",
+          "checked": true
+        },
+        {
+          "name": "Author 5",
+          "checked": true
+        }
+      ]
     },
     {
       "id": "5",
       "title": "Video course 5",
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
-      "duration": 7200000,
-      "date": 1488664800000,
-      "topRated": true
+      "duration": 2700000,
+      "date": 1494789440084,
+      "topRated": true,
+      "authors": [
+        {
+          "name": "Author 1",
+          "checked": false
+        },
+        {
+          "name": "Author 2",
+          "checked": true
+        },
+        {
+          "name": "Author 3",
+          "checked": false
+        },
+        {
+          "name": "Author 4",
+          "checked": true
+        },
+        {
+          "name": "Author 5",
+          "checked": true
+        }
+      ]
     },
     {
       "id": "6",
@@ -30,7 +96,29 @@
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 2700000,
       "date": 1492635600000,
-      "topRated": true
+      "topRated": true,
+      "authors": [
+        {
+          "name": "Author 1",
+          "checked": false
+        },
+        {
+          "name": "Author 2",
+          "checked": true
+        },
+        {
+          "name": "Author 3",
+          "checked": false
+        },
+        {
+          "name": "Author 4",
+          "checked": true
+        },
+        {
+          "name": "Author 5",
+          "checked": true
+        }
+      ]
     },
     {
       "id": "7",
@@ -38,7 +126,29 @@
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 4800000,
       "date": 1491685200000,
-      "topRated": false
+      "topRated": false,
+      "authors": [
+        {
+          "name": "Author 1",
+          "checked": false
+        },
+        {
+          "name": "Author 2",
+          "checked": true
+        },
+        {
+          "name": "Author 3",
+          "checked": false
+        },
+        {
+          "name": "Author 4",
+          "checked": true
+        },
+        {
+          "name": "Author 5",
+          "checked": true
+        }
+      ]
     },
     {
       "id": "8",
@@ -46,7 +156,29 @@
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 7200000,
       "date": 1488664800000,
-      "topRated": true
+      "topRated": true,
+      "authors": [
+        {
+          "name": "Author 1",
+          "checked": false
+        },
+        {
+          "name": "Author 2",
+          "checked": true
+        },
+        {
+          "name": "Author 3",
+          "checked": false
+        },
+        {
+          "name": "Author 4",
+          "checked": true
+        },
+        {
+          "name": "Author 5",
+          "checked": true
+        }
+      ]
     },
     {
       "id": "9",
@@ -54,7 +186,29 @@
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 2700000,
       "date": 1492635600000,
-      "topRated": true
+      "topRated": true,
+      "authors": [
+        {
+          "name": "Author 1",
+          "checked": false
+        },
+        {
+          "name": "Author 2",
+          "checked": true
+        },
+        {
+          "name": "Author 3",
+          "checked": false
+        },
+        {
+          "name": "Author 4",
+          "checked": true
+        },
+        {
+          "name": "Author 5",
+          "checked": true
+        }
+      ]
     },
     {
       "id": "10",
@@ -62,7 +216,29 @@
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 4800000,
       "date": 1491685200000,
-      "topRated": false
+      "topRated": false,
+      "authors": [
+        {
+          "name": "Author 1",
+          "checked": false
+        },
+        {
+          "name": "Author 2",
+          "checked": true
+        },
+        {
+          "name": "Author 3",
+          "checked": false
+        },
+        {
+          "name": "Author 4",
+          "checked": true
+        },
+        {
+          "name": "Author 5",
+          "checked": true
+        }
+      ]
     },
     {
       "id": "11",
@@ -70,7 +246,29 @@
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 7200000,
       "date": 1488664800000,
-      "topRated": true
+      "topRated": true,
+      "authors": [
+        {
+          "name": "Author 1",
+          "checked": false
+        },
+        {
+          "name": "Author 2",
+          "checked": true
+        },
+        {
+          "name": "Author 3",
+          "checked": false
+        },
+        {
+          "name": "Author 4",
+          "checked": true
+        },
+        {
+          "name": "Author 5",
+          "checked": true
+        }
+      ]
     },
     {
       "id": "12",
@@ -78,7 +276,29 @@
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 2700000,
       "date": 1492635600000,
-      "topRated": true
+      "topRated": true,
+      "authors": [
+        {
+          "name": "Author 1",
+          "checked": false
+        },
+        {
+          "name": "Author 2",
+          "checked": true
+        },
+        {
+          "name": "Author 3",
+          "checked": false
+        },
+        {
+          "name": "Author 4",
+          "checked": true
+        },
+        {
+          "name": "Author 5",
+          "checked": true
+        }
+      ]
     },
     {
       "id": "13",
@@ -86,7 +306,29 @@
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 4800000,
       "date": 1491685200000,
-      "topRated": false
+      "topRated": false,
+      "authors": [
+        {
+          "name": "Author 1",
+          "checked": false
+        },
+        {
+          "name": "Author 2",
+          "checked": true
+        },
+        {
+          "name": "Author 3",
+          "checked": false
+        },
+        {
+          "name": "Author 4",
+          "checked": true
+        },
+        {
+          "name": "Author 5",
+          "checked": true
+        }
+      ]
     },
     {
       "id": "14",
@@ -94,7 +336,29 @@
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 7200000,
       "date": 1488664800000,
-      "topRated": true
+      "topRated": true,
+      "authors": [
+        {
+          "name": "Author 1",
+          "checked": false
+        },
+        {
+          "name": "Author 2",
+          "checked": true
+        },
+        {
+          "name": "Author 3",
+          "checked": false
+        },
+        {
+          "name": "Author 4",
+          "checked": true
+        },
+        {
+          "name": "Author 5",
+          "checked": true
+        }
+      ]
     },
     {
       "id": "15",
@@ -102,7 +366,29 @@
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
       "duration": 2700000,
       "date": 1492635600000,
-      "topRated": true
+      "topRated": true,
+      "authors": [
+        {
+          "name": "Author 1",
+          "checked": false
+        },
+        {
+          "name": "Author 2",
+          "checked": true
+        },
+        {
+          "name": "Author 3",
+          "checked": false
+        },
+        {
+          "name": "Author 4",
+          "checked": true
+        },
+        {
+          "name": "Author 5",
+          "checked": true
+        }
+      ]
     }
   ],
   "users": [

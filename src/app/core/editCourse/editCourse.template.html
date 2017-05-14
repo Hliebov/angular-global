@@ -1,30 +1,66 @@
-<div class="edit-course">
-  <div class="title">
+<form [formGroup]="myForm" (submit)="save(myForm.value, myForm.valid)" class="edit-course">
+  <div class="title"
+       [ngClass]="{'invalid': myForm.controls.description.invalid}">
     Title
     <input
+      required
       placeholder="Enter course title"
+      formControlName="title"
       type="text">
+    <small [hidden]="myForm.controls.title.valid || myForm.controls.title.hasError('required')">
+      Max length is 50 symbols!
+    </small>
+    <small *ngIf="myForm.controls.title.hasError('required')">
+      This field is required!
+    </small>
   </div>
 
-  <div class="description">
+  <div class="description"
+       [ngClass]="{'invalid': myForm.controls.description.invalid}">
     Description
     <input
+      required
       placeholder="Enter course description"
+      formControlName="description"
       type="text">
+    <small [hidden]="myForm.controls.description.valid || myForm.controls.description.hasError('required')">
+      Max length is 500 symbols!
+    </small>
+    <small *ngIf="myForm.controls.description.hasError('required')">
+      This field is required!
+    </small>
   </div>
 
-  <div class="date">
-    Date
-    <input
-      type="text">
-  </div>
+  <date-course
+    required
+    [(ngModel)]="date"
+    (onDateChange)="onDateChange($event)"
+    [ngModelOptions]="{standalone: true}">
+  </date-course>
+  <small *ngIf="invalidDate"
+          class="invalid">
+    Invalid date!
+  </small>
 
-  <duration-course></duration-course>
+  <duration-course
+    required
+    [(ngModel)]="activeCourse.duration"
+    (onDurationChange)="onDurationChange($event)"
+    [ngModelOptions]="{standalone: true}">
+  </duration-course>
+
+  <div class="clearfix"></div>
+
+  <authors-course
+    (onAuthorsChange)="onAuthorsChange($event)"
+    [authors]="activeCourse.authors"></authors-course>
 
   <div class="clearfix"></div>
 
   <div class="control">
     <button
+      type="submit"
+      [disabled]="myForm.invalid || invalidDate"
       class="waves-effect teal lighten-2 btn">
       Save
     </button>
@@ -34,5 +70,5 @@
       Cancel
     </button>
   </div>
-</div>
+</form>
 

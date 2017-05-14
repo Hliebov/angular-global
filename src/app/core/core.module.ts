@@ -8,7 +8,7 @@ import { LogoComponent } from './logo/logo.component';
 import { LoginComponent } from './login/login.component';
 import { CoursesComponent } from './courses/courses.component';
 import { AddCourseComponent } from './addCourse/addCourse.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoursesService } from './courses/courses.service';
 import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
@@ -22,11 +22,14 @@ import { EditCourseService } from './editCourse/editCourse.service';
 import { DurationCourseComponent } from './durationCourse/durationCourse';
 import { PaginationService } from './pagination/paginationService';
 import { PaginationComponent } from './pagination/paginationComponent';
+import { DateCourseComponent } from './dateCourse/dateCourse';
+import { AuthorsCourseComponent } from './authorsCourse/authorsCourse';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     ModalModule.forRoot(),
     BootstrapModalModule,
     SharedModule
@@ -46,7 +49,9 @@ import { PaginationComponent } from './pagination/paginationComponent';
     FilterPipe,
     FilterDatePipe,
     DurationCourseComponent,
-    PaginationComponent
+    PaginationComponent,
+    DateCourseComponent,
+    AuthorsCourseComponent
   ],
   declarations: [
     CourseComponent,
@@ -63,7 +68,9 @@ import { PaginationComponent } from './pagination/paginationComponent';
     FilterPipe,
     FilterDatePipe,
     DurationCourseComponent,
-    PaginationComponent
+    PaginationComponent,
+    DateCourseComponent,
+    AuthorsCourseComponent
   ],
   providers: [
     CoursesService,
