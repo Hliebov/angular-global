@@ -6,8 +6,8 @@ import { Component, Output, EventEmitter, Input } from '@angular/core';
   templateUrl: 'authorsCourse.template.html'
 })
 class AuthorsCourseComponent {
-  @Input() authors;
-  @Output() onAuthorsChange = new EventEmitter();
+  @Input() public authors;
+  @Output() public onAuthorsChange = new EventEmitter();
 
   public onAuthorChange(author, checked) {
     author.checked = checked;

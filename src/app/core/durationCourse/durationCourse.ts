@@ -2,6 +2,7 @@ import { Component, forwardRef, Output, EventEmitter } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 const noop = () => {
+  // lint
 };
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
@@ -18,17 +19,17 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
 })
 class DurationCourseComponent {
   public duration: number = 0;
-  private onTouchedCallback: () => void = noop;
-  private onChangeCallback: (_: any) => void = noop;
+  public onTouchedCallback: () => void = noop;
+  public onChangeCallback: (_: any) => void = noop;
 
-  @Output() onDurationChange = new EventEmitter();
+  @Output() public onDurationChange = new EventEmitter();
 
-  //get accessor
+  // get accessor
   get value(): any {
     return this.duration / 60000;
   };
 
-  //set accessor including call the onchange callback
+  // set accessor including call the onchange callback
   set value(v: any) {
     if (v !== this.duration) {
       this.duration = v * 60000;
@@ -36,20 +37,20 @@ class DurationCourseComponent {
     }
   }
 
-  //From ControlValueAccessor interface
-  writeValue(value: any) {
+  // From ControlValueAccessor interface
+  public writeValue(value: any) {
     if (value !== this.duration) {
       this.duration = value;
     }
   }
 
-  //From ControlValueAccessor interface
-  registerOnChange(fn: any) {
+  // From ControlValueAccessor interface
+  public registerOnChange(fn: any) {
     this.onChangeCallback = fn;
   }
 
-  //From ControlValueAccessor interface
-  registerOnTouched(fn: any) {
+  // From ControlValueAccessor interface
+  public registerOnTouched(fn: any) {
     this.onTouchedCallback = fn;
   }
 }

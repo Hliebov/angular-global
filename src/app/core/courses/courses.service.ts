@@ -64,9 +64,11 @@ class CoursesService {
       topRated: course.topRated,
       authors: course.authors
     })
-      .subscribe((response) => {
-
-      });
+    .subscribe((response) => {
+      if (response.status === 200) {
+        alert('The course was updated!');
+      }
+    });
   }
 
   public removeCourse(id: string): void {

@@ -54,13 +54,17 @@
   <authors-course
     (onAuthorsChange)="onAuthorsChange($event)"
     [authors]="activeCourse.authors"></authors-course>
+  <small *ngIf="invalidAuthors"
+         class="invalid">
+    At least one author should be checked!
+  </small>
 
   <div class="clearfix"></div>
 
   <div class="control">
     <button
       type="submit"
-      [disabled]="myForm.invalid || invalidDate"
+      [disabled]="myForm.invalid || invalidDate || invalidAuthors"
       class="waves-effect teal lighten-2 btn">
       Save
     </button>

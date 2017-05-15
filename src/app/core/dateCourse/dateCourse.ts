@@ -3,6 +3,7 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import * as moment from 'moment';
 
 const noop = () => {
+  // lint
 };
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
@@ -19,16 +20,16 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
 })
 class DateCourseComponent {
   public date: string = '';
-  private onTouchedCallback: () => void = noop;
-  private onChangeCallback: (_: any) => void = noop;
-  @Output() onDateChange = new EventEmitter();
+  public onTouchedCallback: () => void = noop;
+  public onChangeCallback: (_: any) => void = noop;
+  @Output() public onDateChange = new EventEmitter();
 
-  //get accessor
+  // get accessor
   get value(): any {
     return this.date;
   };
 
-  //set accessor including call the onchange callback
+  // set accessor including call the onchange callback
   set value(v: any) {
     if (v !== this.date) {
       this.date = v;
@@ -36,20 +37,20 @@ class DateCourseComponent {
     }
   }
 
-  //From ControlValueAccessor interface
-  writeValue(value: any) {
+  // From ControlValueAccessor interface
+  public writeValue(value: any) {
     if (value !== this.date) {
       this.date = value;
     }
   }
 
-  //From ControlValueAccessor interface
-  registerOnChange(fn: any) {
+  // From ControlValueAccessor interface
+  public registerOnChange(fn: any) {
     this.onChangeCallback = fn;
   }
 
-  //From ControlValueAccessor interface
-  registerOnTouched(fn: any) {
+  // From ControlValueAccessor interface
+  public registerOnTouched(fn: any) {
     this.onTouchedCallback = fn;
   }
 }
