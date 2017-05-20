@@ -34,6 +34,8 @@ import 'angular2-materialize';
 import { MaterializeModule } from 'angular2-materialize';
 import { SharedModule } from './shared/shared.module';
 import { AuthorizedHttpService } from './shared/authorizedHttp/authorizedHttp.service';
+import { CoursesAllComponent } from "./courses/courses.component";
+import { AuthGuard } from './auth-guard/auth-guard.service';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -54,7 +56,8 @@ type StoreType = {
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    CoursesAllComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
@@ -69,7 +72,8 @@ type StoreType = {
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
     APP_PROVIDERS,
-    AuthorizedHttpService
+    AuthorizedHttpService,
+    AuthGuard
   ]
 })
 export class AppModule {

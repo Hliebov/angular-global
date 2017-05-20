@@ -2,15 +2,10 @@
   <header></header>
   <main>
     <div class="clearfix"></div>
-    <div class="main" *ngIf="username && !isEditing">
-      <search></search>
-      <add-course></add-course>
-      <div class="clearfix"></div>
-      <courses></courses>
-      <pagination *ngIf="username && !isEditing"></pagination>
-    </div>
-    <login *ngIf="!username"></login>
-    <edit-course *ngIf="isEditing && username"></edit-course>
+    <router-outlet></router-outlet>
+
+    <!--<login *ngIf="!username"></login>-->
+    <!--<edit-course *ngIf="isEditing && username"></edit-course>-->
     <loader-block></loader-block>
   </main>
   <footer></footer>
