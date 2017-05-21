@@ -5,12 +5,14 @@ import { User } from '../../core/login/user.type';
 import { LoaderBlockService } from '../loaderBlock/loaderBlock.service';
 import { CoursesService } from './../../core/courses/courses.service';
 import * as Cookies from 'cookies-js';
+import { Router } from '@angular/router';
 
 @Injectable()
 class AuthService {
   public username: ReplaySubject<string>;
 
   constructor(public http: Http,
+              public router: Router,
               public loaderBlockService: LoaderBlockService,
               public coursesService: CoursesService) {
     this.username = new ReplaySubject(1);
@@ -36,6 +38,7 @@ class AuthService {
       this.username.next(userInfo.name);
       this.coursesService.getCoursesByPageNumber(1);
       Cookies.set('token', userInfo.fakeToken);
+      this.router.navigate(['/courses']);
     } else {
       alert('Login or password is not correct!');
     }
@@ -44,6 +47,7 @@ class AuthService {
   public logout(): void {
     localStorage.removeItem('userName');
     this.username.next('');
+    this.router.navigate(['/login']);
   }
 
   public getUserInfo(): ReplaySubject<string> {

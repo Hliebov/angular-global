@@ -6,6 +6,7 @@
        *ngIf="username">
     <a href="#" class="breadcrumb">Home</a>
     <a href="#" class="breadcrumb">Courses</a>
+    <a href="#" class="breadcrumb" *ngIf="id">Course {{id}}</a>
   </div>
   <div class="header-auth"
        *ngIf="username">

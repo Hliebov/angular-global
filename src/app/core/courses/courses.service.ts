@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Course } from '../course/course.type';
-import { Subject } from 'rxjs';
+import { ReplaySubject } from 'rxjs';
 import { Http, Response } from '@angular/http';
 import { AuthorizedHttpService } from './../../shared/authorizedHttp/authorizedHttp.service';
 import { LoaderBlockService } from './../../shared/loaderBlock/loaderBlock.service';
+import { Router } from '@angular/router';
 
 const pageLimit = 3;
 
 @Injectable()
 class CoursesService {
-  public courses: Subject<Course[]> = new Subject();
+  public courses: ReplaySubject<Course[]> = new ReplaySubject(1);
 
   constructor(public http: Http,
+              public router: Router,
               public aHttp: AuthorizedHttpService,
               public loaderBlock: LoaderBlockService) {
     this.getCoursesByPageNumber(1);
@@ -67,6 +69,8 @@ class CoursesService {
     .subscribe((response) => {
       if (response.status === 200) {
         alert('The course was updated!');
+        this.router.navigate(['/courses']);
+        this.getCoursesByPageNumber(1);
       }
     });
   }

@@ -1,9 +1,10 @@
 <div class="home">
-  <div class="main">
+  <div *ngIf="!isEditing" class="main">
     <search></search>
     <add-course></add-course>
     <div class="clearfix"></div>
     <courses></courses>
     <pagination></pagination>
   </div>
+  <router-outlet></router-outlet>
 </div>

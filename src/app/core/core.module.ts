@@ -24,10 +24,12 @@ import { PaginationService } from './pagination/paginationService';
 import { PaginationComponent } from './pagination/paginationComponent';
 import { DateCourseComponent } from './dateCourse/dateCourse';
 import { AuthorsCourseComponent } from './authorsCourse/authorsCourse';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
     FormsModule,
     ReactiveFormsModule,
     ModalModule.forRoot(),

@@ -29,11 +29,12 @@
   </div>
 
   <div class="course-edit">
-    <div
+    <a
       (click)="editCourse(course)"
+      [routerLink]="['/courses', course._id]"
       class="course-edit__ctrl waves-effect blue accent-2 btn">
-      Edit
-    </div>
+        Edit
+    </a>
     <div (click)="onCourseDelete(course)"
          class="course-edit__ctrl waves-effect red accent-2 btn">
       Delete

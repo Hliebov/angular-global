@@ -34,7 +34,8 @@ import 'angular2-materialize';
 import { MaterializeModule } from 'angular2-materialize';
 import { SharedModule } from './shared/shared.module';
 import { AuthorizedHttpService } from './shared/authorizedHttp/authorizedHttp.service';
-import { CoursesAllComponent } from "./courses/courses.component";
+import { CoursesAllComponent } from './courses/courses.component';
+import { Component404 } from './404/404';
 import { AuthGuard } from './auth-guard/auth-guard.service';
 
 // Application wide providers
@@ -57,6 +58,7 @@ type StoreType = {
   declarations: [
     AppComponent,
     HomeComponent,
+    Component404,
     CoursesAllComponent
   ],
   imports: [ // import Angular's modules
