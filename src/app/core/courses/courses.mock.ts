@@ -37,7 +37,8 @@ let course: Course = {
                   excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?`,
   duration: 60 * 60 * 1000,
   date: +new Date(2017, 2, 27),
-  topRated: true
+  topRated: true,
+  authors: []
 };
 
 export { mockCourses, course };

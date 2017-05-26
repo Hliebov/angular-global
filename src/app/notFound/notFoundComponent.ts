@@ -6,5 +6,5 @@ import {
   selector: 'not-found',
   template: `<h1>NOT FOUND</h1>`
 })
-export class Component404 {
+export class NotFoundComponent {
 }

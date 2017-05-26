@@ -9,7 +9,7 @@ interface Course {
   duration: number;
   date: number;
   topRated: boolean;
-  authors: Author[]
+  authors: Author[];
 }
 
 export { Course };

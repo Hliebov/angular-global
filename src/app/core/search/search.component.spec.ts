@@ -1,16 +1,38 @@
 import { SearchComponent } from './search.component';
 
 describe('SearchComponent', () => {
+  let sut,
+      getCoursesByPageNumberSpy,
+      onSearchSpy,
+      mockCoursesService;
 
-  let searchComponent = new SearchComponent();
+  beforeEach(() => {
+    getCoursesByPageNumberSpy = jasmine.createSpy('getCoursesByPageNumber');
+    onSearchSpy = jasmine.createSpy('onSearchSpy');
+
+    mockCoursesService = {
+      getCoursesByPageNumber: getCoursesByPageNumberSpy,
+      onSearch: onSearchSpy
+    };
+    sut = new SearchComponent(mockCoursesService);
+  });
+
+  describe('onSearch', () => {
+    it('should call onSearch method on coursesService', () => {
+      sut.onSearch('abc');
+      expect(onSearchSpy)
+        .toHaveBeenCalledWith('abc');
+    });
+  });
 
   describe('clearQuery', () => {
-    it('should clear searchQuery', () => {
-      expect(searchComponent.searchQuery).toEqual('');
-      searchComponent.searchQuery = 'abc';
-      expect(searchComponent.searchQuery).toEqual('abc');
-      searchComponent.clearQuery();
-      expect(searchComponent.searchQuery).toEqual('');
+    it('should call onSearch method on coursesService', () => {
+      sut.searchQuery = 'abc';
+      sut.clearQuery();
+      expect(getCoursesByPageNumberSpy)
+        .toHaveBeenCalledWith(1);
+      expect(sut.searchQuery)
+        .toEqual('');
     });
   });
 

@@ -13,22 +13,22 @@ class HeaderComponent implements OnDestroy {
   public id: string;
   public subscription: Subscription;
 
-  constructor(public authService: AuthService, public route: ActivatedRoute, public router: Router) {
+  constructor(public authService: AuthService,
+              public route: ActivatedRoute,
+              public router: Router) {
     this.subscription = this.authService.getUserInfo().subscribe((username) => {
       this.username = username;
     });
 
-    this.router.events
-      .subscribe((val) => {
-        if(this.route.children[0].children[0]) {
+    this.router.events.subscribe((val) => {
+        if (this.route.children[0].children[0]) {
           this.route.children[0].children[0].params.subscribe((p) => {
-            this.id = p.id;
+            this.id = p['id'];
           });
         } else {
           this.id = null;
         }
-      })
-
+      });
   }
 
   public logout(): void {

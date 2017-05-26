@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Course } from '../course/course.type';
 import { ReplaySubject } from 'rxjs';
 import { Http, Response } from '@angular/http';
@@ -6,16 +6,19 @@ import { AuthorizedHttpService } from './../../shared/authorizedHttp/authorizedH
 import { LoaderBlockService } from './../../shared/loaderBlock/loaderBlock.service';
 import { Router } from '@angular/router';
 
-const pageLimit = 3;
+const PAGE_LIMIT = 3;
 
 @Injectable()
-class CoursesService {
+class CoursesService implements OnInit {
   public courses: ReplaySubject<Course[]> = new ReplaySubject(1);
 
-  constructor(public http: Http,
-              public router: Router,
+  constructor(public router: Router,
               public aHttp: AuthorizedHttpService,
               public loaderBlock: LoaderBlockService) {
+    // lint;
+  }
+
+  public ngOnInit() {
     this.getCoursesByPageNumber(1);
   }
 
@@ -38,22 +41,26 @@ class CoursesService {
       });
   }
 
+  public throwCourses(courses) {
+    this.loaderBlock.hide();
+    let list = this.prepareCourses(courses);
+    this.courses.next(list);
+  }
+
   public getCoursesByPageNumber(pageNumber: number): void {
     this.loaderBlock.show();
-    this.aHttp.get(`http://localhost:3030/courses?_page=${pageNumber}&_limit=${pageLimit}`)
-      .subscribe((courses) => {
-        this.loaderBlock.hide();
-        let list = this.prepareCourses(courses);
-        this.courses.next(list);
-      });
+    this.aHttp.get(`http://localhost:3030/courses?_page=${pageNumber}&_limit=${PAGE_LIMIT}`)
+      .subscribe(this.throwCourses);
+  }
+
+  public throwList(courses) {
+    let list = this.prepareCourses(courses);
+    this.courses.next(list);
   }
 
   public onSearch(searchQuery: string): void {
     this.aHttp.get(`http://localhost:3030/courses?title_like=${searchQuery}`)
-      .subscribe((courses) => {
-        let list = this.prepareCourses(courses);
-        this.courses.next(list);
-      });
+      .subscribe(this.throwList);
   }
 
   public updateCourse(form, course): void {
@@ -85,4 +92,4 @@ class CoursesService {
   }
 }
 
-export { CoursesService };
+export { CoursesService, PAGE_LIMIT };

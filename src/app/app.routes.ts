@@ -4,7 +4,7 @@ import { CoursesAllComponent } from './courses/courses.component';
 import { EditCourseComponent } from './core/editCourse/editCourse.component';
 import { LoginComponent } from './core/login/login.component';
 import { AuthGuard } from './auth-guard/auth-guard.service';
-import { Component404 } from './404/404';
+import { NotFoundComponent } from './notFound/notFoundComponent';
 
 export const ROUTES: Routes = [
   {
@@ -18,5 +18,5 @@ export const ROUTES: Routes = [
       { path: '',  redirectTo: 'courses', pathMatch: 'full', },
     ]
   },
-  { path: '**', component: Component404 },
+  { path: '**', component: NotFoundComponent },
 ];
