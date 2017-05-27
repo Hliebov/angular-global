@@ -8,7 +8,6 @@ import { Store } from '@ngrx/store';
 import { AppState } from './../../app.store';
 import { EditCourseState } from '../../reducers/editCourse.reducer';
 
-
 const dateFormat = 'DD/MM/YYYY';
 
 @Component({

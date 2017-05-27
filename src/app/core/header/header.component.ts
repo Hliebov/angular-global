@@ -3,6 +3,7 @@ import { AuthService } from './../../shared/auth/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from './../../app.store';
+import { AuthState } from '../../reducers/auth.reducer';
 
 @Component({
   selector: 'header',
@@ -21,7 +22,7 @@ class HeaderComponent {
       .filter((s) => {
         return !!s;
       })
-      .map((s: any) => {
+      .map((s: AuthState) => {
         return s.username;
       });
 

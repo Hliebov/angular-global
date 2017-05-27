@@ -24,8 +24,7 @@ function editCourseReducer(state: EditCourseState = defaultEditCourseState, acti
 
       case FINISH_EDIT_COURSE:
       return Object.assign({}, state, {
-        isEditing: false,
-        activeCourse: null
+        isEditing: false
       });
 
     default:
@@ -34,4 +33,3 @@ function editCourseReducer(state: EditCourseState = defaultEditCourseState, acti
 }
 
 export { editCourseReducer, EditCourseState, EDIT_COURSE, FINISH_EDIT_COURSE };
-

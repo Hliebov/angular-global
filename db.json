@@ -61,36 +61,6 @@
       ]
     },
     {
-      "id": "5",
-      "title": "Video course 5",
-      "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",
-      "duration": 2700000,
-      "date": 1494789440084,
-      "topRated": true,
-      "authors": [
-        {
-          "name": "Author 1",
-          "checked": false
-        },
-        {
-          "name": "Author 2",
-          "checked": true
-        },
-        {
-          "name": "Author 3",
-          "checked": false
-        },
-        {
-          "name": "Author 4",
-          "checked": true
-        },
-        {
-          "name": "Author 5",
-          "checked": true
-        }
-      ]
-    },
-    {
       "id": "6",
       "title": "Video course 6",
       "noDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus excepturi ipsum mollitia ratione sapiente tenetur unde, veniam?",

@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { EditCourseService } from './../editCourse/editCourse.service';
 import { AppState } from '../../app.store';
 import { Store } from '@ngrx/store';
+import { EditCourseState } from '../../reducers/editCourse.reducer';
 
 @Component({
   selector: 'pagination',
@@ -27,7 +28,7 @@ class PaginationComponent implements OnDestroy {
     this.activePageSubscription = this.paginationService.activePage.subscribe((page) => {
       this.activePage = page;
     });
-    this.isEditingSubscription = this.store.select('editCourse').subscribe((s: any) => {
+    this.isEditingSubscription = this.store.select('editCourse').subscribe((s: EditCourseState) => {
       if (!s.isEditing) {
         this.getCoursesByPageNumber(this.activePage);
       }

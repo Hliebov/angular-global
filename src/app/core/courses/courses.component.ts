@@ -5,7 +5,7 @@ import { Modal } from 'angular2-modal/plugins/bootstrap';
 import { LoaderBlockService } from './../../shared/loaderBlock/loaderBlock.service';
 import { Store } from '@ngrx/store';
 import { AppState } from './../../app.store';
-
+import { CoursesState } from '../../reducers/courses.reducer';
 
 @Component({
   selector: 'courses',
@@ -25,7 +25,7 @@ class CoursesComponent implements OnInit {
   public ngOnInit() {
     this.coursesService.getCoursesByPageNumber(1);
     this.courses = this.store.select('courses')
-      .map((s: any) => {
+      .map((s: CoursesState) => {
         return s.data;
       });
   }

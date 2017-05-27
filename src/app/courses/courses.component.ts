@@ -1,9 +1,9 @@
 import {
   Component
 } from '@angular/core';
-import {Store} from '@ngrx/store';
-import {AppState} from './../app.store';
-import {FINISH_EDIT_COURSE} from './../reducers/editCourse.reducer';
+import { Store } from '@ngrx/store';
+import { AppState } from './../app.store';
+import { EditCourseState } from '../reducers/editCourse.reducer';
 
 @Component({
   selector: 'courses-all',
@@ -15,7 +15,7 @@ export class CoursesAllComponent {
 
   constructor(public store: Store<AppState>) {
     this.isEditing = this.store.select('editCourse')
-      .map((s: any) => {
+      .map((s: EditCourseState) => {
         return s.isEditing;
       });
   }
