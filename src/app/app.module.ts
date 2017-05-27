@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { StoreModule } from '@ngrx/store';
 import {
   NgModule,
   ApplicationRef
@@ -38,6 +39,8 @@ import { CoursesAllComponent } from './courses/courses.component';
 import { NotFoundComponent } from './notFound/notFoundComponent';
 import { AuthGuard } from './auth-guard/auth-guard.service';
 
+import { reducerDef } from './app.store';
+
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
@@ -69,7 +72,8 @@ type StoreType = {
     SharedModule,
     CoreModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
+    StoreModule.provideStore(reducerDef)
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,

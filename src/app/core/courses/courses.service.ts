@@ -1,6 +1,6 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Course } from '../course/course.type';
-import { ReplaySubject } from 'rxjs';
+import { ReplaySubject, Observable } from 'rxjs';
 import { Http, Response } from '@angular/http';
 import { AuthorizedHttpService } from './../../shared/authorizedHttp/authorizedHttp.service';
 import { LoaderBlockService } from './../../shared/loaderBlock/loaderBlock.service';
@@ -9,17 +9,12 @@ import { Router } from '@angular/router';
 const PAGE_LIMIT = 3;
 
 @Injectable()
-class CoursesService implements OnInit {
+class CoursesService {
   public courses: ReplaySubject<Course[]> = new ReplaySubject(1);
 
   constructor(public router: Router,
               public aHttp: AuthorizedHttpService,
               public loaderBlock: LoaderBlockService) {
-    // lint;
-  }
-
-  public ngOnInit() {
-    this.getCoursesByPageNumber(1);
   }
 
   public createCourse(): void {
@@ -41,26 +36,20 @@ class CoursesService implements OnInit {
       });
   }
 
-  public throwCourses(courses) {
-    this.loaderBlock.hide();
-    let list = this.prepareCourses(courses);
-    this.courses.next(list);
-  }
-
-  public getCoursesByPageNumber(pageNumber: number): void {
-    this.loaderBlock.show();
+  public getCoursesByPageNumber(pageNumber: number) {
     this.aHttp.get(`http://localhost:3030/courses?_page=${pageNumber}&_limit=${PAGE_LIMIT}`)
-      .subscribe(this.throwCourses);
+      .map(this.prepareCourses)
+      .subscribe((courses) => {
+        this.courses.next(courses);
+      });
   }
 
-  public throwList(courses) {
-    let list = this.prepareCourses(courses);
-    this.courses.next(list);
-  }
-
-  public onSearch(searchQuery: string): void {
+  public onSearch(searchQuery: string) {
     this.aHttp.get(`http://localhost:3030/courses?title_like=${searchQuery}`)
-      .subscribe(this.throwList);
+      .map(this.prepareCourses)
+      .subscribe((courses) => {
+        this.courses.next(courses);
+      });
   }
 
   public updateCourse(form, course): void {

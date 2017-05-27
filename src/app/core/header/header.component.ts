@@ -1,24 +1,29 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from './../../shared/auth/auth.service';
-import { Subscription } from 'rxjs';
-import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { AppState } from './../../app.store';
 
 @Component({
   selector: 'header',
   templateUrl: './header.template.html',
   styleUrls: ['header.style.scss']
 })
-class HeaderComponent implements OnDestroy {
-  public username: string;
+class HeaderComponent {
+  public username;
   public id: string;
-  public subscription: Subscription;
 
   constructor(public authService: AuthService,
               public route: ActivatedRoute,
+              public store: Store<AppState>,
               public router: Router) {
-    this.subscription = this.authService.getUserInfo().subscribe((username) => {
-      this.username = username;
-    });
+    this.username = this.store.select('auth')
+      .filter((s) => {
+        return !!s;
+      })
+      .map((s: any) => {
+        return s.username;
+      });
 
     this.router.events.subscribe((val) => {
         if (this.route.children[0].children[0]) {
@@ -33,10 +38,6 @@ class HeaderComponent implements OnDestroy {
 
   public logout(): void {
     this.authService.logout();
-  }
-
-  public ngOnDestroy() {
-    this.subscription.unsubscribe();
   }
 
 }

@@ -10,9 +10,8 @@ import { Subscription } from 'rxjs';
   templateUrl: 'courses.template.html',
   styleUrls: ['courses.style.scss']
 })
-class CoursesComponent implements OnInit, OnDestroy {
-  public courses: Course[] = [];
-  public subscription: Subscription;
+class CoursesComponent implements OnInit {
+  public courses;
 
   constructor( public coursesService: CoursesService,
                public loaderBlockService: LoaderBlockService,
@@ -21,9 +20,8 @@ class CoursesComponent implements OnInit, OnDestroy {
   }
 
   public ngOnInit() {
-    this.subscription = this.coursesService.courses.subscribe((courses) => {
-      this.courses = courses;
-    });
+    this.coursesService.getCoursesByPageNumber(1);
+    this.courses = this.coursesService.courses;
   }
 
   public openConfirmModal(message: string): Promise<any> {
@@ -53,10 +51,6 @@ class CoursesComponent implements OnInit, OnDestroy {
       .catch((e) => {
         console.log(e);
       });
-  }
-
-  public ngOnDestroy() {
-    this.subscription.unsubscribe();
   }
 }
 
