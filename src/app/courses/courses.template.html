@@ -1,5 +1,5 @@
 <div class="home">
-  <div *ngIf="!isEditing" class="main">
+  <div *ngIf="!(isEditing | async)" class="main">
     <search></search>
     <add-course></add-course>
     <div class="clearfix"></div>

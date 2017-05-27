@@ -3,7 +3,9 @@ import { Course } from './../course/course.type';
 import { CoursesService } from './courses.service';
 import { Modal } from 'angular2-modal/plugins/bootstrap';
 import { LoaderBlockService } from './../../shared/loaderBlock/loaderBlock.service';
-import { Subscription } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { AppState } from './../../app.store';
+
 
 @Component({
   selector: 'courses',
@@ -14,6 +16,7 @@ class CoursesComponent implements OnInit {
   public courses;
 
   constructor( public coursesService: CoursesService,
+               public store: Store<AppState>,
                public loaderBlockService: LoaderBlockService,
                public modal: Modal) {
     // lint
@@ -21,7 +24,10 @@ class CoursesComponent implements OnInit {
 
   public ngOnInit() {
     this.coursesService.getCoursesByPageNumber(1);
-    this.courses = this.coursesService.courses;
+    this.courses = this.store.select('courses')
+      .map((s: any) => {
+        return s.data;
+      });
   }
 
   public openConfirmModal(message: string): Promise<any> {

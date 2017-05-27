@@ -1,7 +1,7 @@
-import {Action} from '@ngrx/store';
+import { Action } from '@ngrx/store';
 
-const LOGIN = 'login';
-const LOGOUT = 'logout';
+const LOGIN = 'LOGIN';
+const LOGOUT = 'LOGOUT';
 
 const defaultAuthState = {
   authorized: false,
@@ -26,6 +26,9 @@ function authReducer(state: AuthState = defaultAuthState, action: Action) {
         authorized: false,
         username: ''
       });
+
+    default:
+      return state;
   }
 }
 

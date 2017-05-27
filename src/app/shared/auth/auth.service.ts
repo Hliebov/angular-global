@@ -8,18 +8,16 @@ import * as Cookies from 'cookies-js';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from './../../app.store';
+import { LOGIN, LOGOUT } from './../../reducers/auth.reducer';
 
 @Injectable()
 class AuthService {
-  public username: ReplaySubject<string>;
 
   constructor(public http: Http,
               public store: Store<AppState>,
               public router: Router,
               public loaderBlockService: LoaderBlockService,
               public coursesService: CoursesService) {
-    this.username = new ReplaySubject(1);
-    this.username.next(localStorage.getItem('userName') || '');
   }
 
   public login(name: string, password: string): void {
@@ -38,7 +36,7 @@ class AuthService {
   public checkCredentials(userInfo: User, password: string) {
     if (userInfo.password === password) {
       localStorage.setItem('userName', userInfo.name);
-      this.store.dispatch({type: 'login', payload: userInfo.name});
+      this.store.dispatch({type: LOGIN, payload: userInfo.name});
       this.coursesService.getCoursesByPageNumber(1);
       Cookies.set('token', userInfo.fakeToken);
       this.router.navigate(['/courses']);
@@ -49,12 +47,8 @@ class AuthService {
 
   public logout(): void {
     localStorage.removeItem('userName');
-    this.store.dispatch({type: 'logout', payload: ''});
+    this.store.dispatch({type: LOGOUT, payload: ''});
     this.router.navigate(['/login']);
-  }
-
-  public getUserInfo(): ReplaySubject<string> {
-    return this.username;
   }
 }
 

@@ -4,6 +4,10 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import { CoursesService } from '../courses/courses.service';
 import * as moment from 'moment';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { AppState } from './../../app.store';
+import { EditCourseState } from '../../reducers/editCourse.reducer';
+
 
 const dateFormat = 'DD/MM/YYYY';
 
@@ -22,29 +26,27 @@ class EditCourseComponent implements OnInit {
   constructor(public editCourseService: EditCourseService,
               public route: ActivatedRoute,
               public router: Router,
+              public store: Store<AppState>,
               public coursesService: CoursesService,
               public _fb: FormBuilder) {
   }
 
   public ngOnInit() {
-    this.route.params.subscribe((params) => {
-      this.id = params['id'];
-      this.coursesService.courses.subscribe((courses) => {
-        courses.forEach((course) => {
-          if (course._id === this.id) {
-            this.activeCourse = course;
-            this.myForm = this._fb.group({
-              title: [this.activeCourse.title,
-                [<any> Validators.required, <any> Validators.maxLength(50)]],
-              description: [this.activeCourse.description,
-                [<any> Validators.required, <any> Validators.maxLength(500)]
-              ]
-            });
-            this.date = moment(this.activeCourse.date).format(dateFormat);
-          }
+   this.store.select('editCourse')
+      .filter((s) => {
+        return !!s;
+      })
+      .subscribe((state: EditCourseState) => {
+        this.activeCourse = state.activeCourse;
+        this.myForm = this._fb.group({
+          title: [this.activeCourse.title,
+            [<any> Validators.required, <any> Validators.maxLength(50)]],
+          description: [this.activeCourse.description,
+            [<any> Validators.required, <any> Validators.maxLength(500)]
+          ]
         });
+        this.date = moment(this.activeCourse.date).format(dateFormat);
       });
-    });
   }
 
   public cancelEdit(): void {

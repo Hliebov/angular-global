@@ -1,19 +1,22 @@
 import {
   Component
 } from '@angular/core';
-import { EditCourseService } from '../core/editCourse/editCourse.service';
+import {Store} from '@ngrx/store';
+import {AppState} from './../app.store';
+import {FINISH_EDIT_COURSE} from './../reducers/editCourse.reducer';
 
 @Component({
   selector: 'courses-all',
-  styleUrls: [ 'courses.style.scss' ],
+  styleUrls: ['courses.style.scss'],
   templateUrl: 'courses.template.html'
 })
 export class CoursesAllComponent {
-  public isEditing: boolean;
+  public isEditing;
 
-  constructor(public editCourseService: EditCourseService) {
-    editCourseService.isEditing.subscribe((i) => {
-      this.isEditing = i;
-    });
+  constructor(public store: Store<AppState>) {
+    this.isEditing = this.store.select('editCourse')
+      .map((s: any) => {
+        return s.isEditing;
+      });
   }
 }

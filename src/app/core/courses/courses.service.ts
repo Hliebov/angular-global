@@ -1,18 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Course } from '../course/course.type';
-import { ReplaySubject, Observable } from 'rxjs';
+import { ReplaySubject } from 'rxjs';
 import { Http, Response } from '@angular/http';
 import { AuthorizedHttpService } from './../../shared/authorizedHttp/authorizedHttp.service';
 import { LoaderBlockService } from './../../shared/loaderBlock/loaderBlock.service';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { UPDATE_COURSES } from './../../reducers/courses.reducer';
+import { AppState } from './../../app.store';
 
 const PAGE_LIMIT = 3;
 
 @Injectable()
 class CoursesService {
-  public courses: ReplaySubject<Course[]> = new ReplaySubject(1);
-
   constructor(public router: Router,
+              public store: Store<AppState>,
               public aHttp: AuthorizedHttpService,
               public loaderBlock: LoaderBlockService) {
   }
@@ -40,7 +42,7 @@ class CoursesService {
     this.aHttp.get(`http://localhost:3030/courses?_page=${pageNumber}&_limit=${PAGE_LIMIT}`)
       .map(this.prepareCourses)
       .subscribe((courses) => {
-        this.courses.next(courses);
+        this.store.dispatch({type: UPDATE_COURSES, payload: courses});
       });
   }
 
@@ -48,7 +50,7 @@ class CoursesService {
     this.aHttp.get(`http://localhost:3030/courses?title_like=${searchQuery}`)
       .map(this.prepareCourses)
       .subscribe((courses) => {
-        this.courses.next(courses);
+        this.store.dispatch({type: UPDATE_COURSES, payload: courses});
       });
   }
 
