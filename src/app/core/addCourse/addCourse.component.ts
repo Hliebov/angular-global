@@ -12,7 +12,6 @@ class AddCourseComponent {
   }
 
   public addCourse(): void {
-    this.coursesService.createCourse();
   }
 }
 

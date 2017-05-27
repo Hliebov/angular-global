@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Course } from '../course/course.type';
-import { ReplaySubject } from 'rxjs';
-import { Http, Response } from '@angular/http';
+import { Response } from '@angular/http';
 import { AuthorizedHttpService } from './../../shared/authorizedHttp/authorizedHttp.service';
-import { LoaderBlockService } from './../../shared/loaderBlock/loaderBlock.service';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { UPDATE_COURSES } from './../../reducers/courses.reducer';
@@ -15,12 +13,7 @@ const PAGE_LIMIT = 3;
 class CoursesService {
   constructor(public router: Router,
               public store: Store<AppState>,
-              public aHttp: AuthorizedHttpService,
-              public loaderBlock: LoaderBlockService) {
-  }
-
-  public createCourse(): void {
-    // lint;
+              public aHttp: AuthorizedHttpService) {
   }
 
   public prepareCourses(courses: Response): Course[] {
