@@ -12,6 +12,7 @@ class AddCourseComponent {
   }
 
   public addCourse(): void {
+    // lint
   }
 }
 

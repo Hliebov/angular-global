@@ -21,4 +21,4 @@ class EditCourseService {
 
 }
 
-export { EditCourseService };
+export { EditCourseService, EDIT_COURSE, FINISH_EDIT_COURSE };

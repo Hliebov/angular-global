@@ -23,7 +23,6 @@ class EditCourseComponent implements OnInit {
   public invalidDate;
   public invalidAuthors;
   constructor(public editCourseService: EditCourseService,
-              public route: ActivatedRoute,
               public router: Router,
               public store: Store<AppState>,
               public coursesService: CoursesService,
