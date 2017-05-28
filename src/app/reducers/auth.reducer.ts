@@ -32,4 +32,7 @@ function authReducer(state: AuthState = defaultAuthState, action: Action) {
   }
 }
 
-export { authReducer, AuthState, LOGIN, LOGOUT };
+export { authReducer,
+  AuthState,
+  defaultAuthState,
+  LOGIN, LOGOUT };

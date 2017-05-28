@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { UPDATE_COURSES } from './../../reducers/courses.reducer';
 import { AppState } from './../../app.store';
+import { LoaderBlockService } from '../../shared/loaderBlock/loaderBlock.service';
 
 const PAGE_LIMIT = 3;
 
@@ -13,7 +14,8 @@ const PAGE_LIMIT = 3;
 class CoursesService {
   constructor(public router: Router,
               public store: Store<AppState>,
-              public aHttp: AuthorizedHttpService) {
+              public aHttp: AuthorizedHttpService,
+              public loaderBlockService: LoaderBlockService) {
   }
 
   public prepareCourses(courses: Response): Course[] {
@@ -70,6 +72,7 @@ class CoursesService {
     this.aHttp.delete(`http://localhost:3030/courses/${id}`)
       .subscribe((response) => {
         if (response.status === 200) {
+          this.loaderBlockService.hide();
           this.getCoursesByPageNumber(1);
         }
       });

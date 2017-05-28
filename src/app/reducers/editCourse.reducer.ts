@@ -32,4 +32,8 @@ function editCourseReducer(state: EditCourseState = defaultEditCourseState, acti
   }
 }
 
-export { editCourseReducer, EditCourseState, EDIT_COURSE, FINISH_EDIT_COURSE };
+export {
+  editCourseReducer,
+  defaultEditCourseState,
+  EditCourseState,
+  EDIT_COURSE, FINISH_EDIT_COURSE };

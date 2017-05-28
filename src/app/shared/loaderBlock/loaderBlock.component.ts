@@ -7,18 +7,11 @@ import { Subscription } from 'rxjs';
   templateUrl: './loaderBlock.template.html',
   styleUrls: ['./loaderBlock.style.scss']
 })
-class LoaderBlockComponent implements OnDestroy {
-  public isShown: boolean;
-  public subscription: Subscription;
+class LoaderBlockComponent {
+  public isShown;
 
   constructor(public loaderBlockService: LoaderBlockService) {
-    this.subscription = loaderBlockService.isShown.subscribe((show) => {
-      this.isShown = show;
-    });
-  }
-
-  public ngOnDestroy() {
-    this.subscription.unsubscribe();
+    this.isShown = loaderBlockService.isShown;
   }
 }
 

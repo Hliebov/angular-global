@@ -11,12 +11,16 @@ describe('CoursesService', () => {
     mockNavigate,
     mockDispatch,
     mockResponse,
+    mockLoaderBlock,
     subscribeSpy;
 
   beforeEach(() => {
     mockCourse = 'mockCourse';
     mockResponse = {
       status: 200
+    };
+    mockLoaderBlock = {
+      hide: jasmine.createSpy('hide')
     };
     mockDispatch = jasmine.createSpy('mockDispatch');
 
@@ -51,7 +55,7 @@ describe('CoursesService', () => {
       dispatch: mockDispatch
     };
 
-    sut = new CoursesService(mockRouter, mockStore, httpSpy);
+    sut = new CoursesService(mockRouter, mockStore, httpSpy, mockLoaderBlock);
   });
 
   describe('prepareCourses', () => {
@@ -157,6 +161,8 @@ describe('CoursesService', () => {
         .toHaveBeenCalledWith('http://localhost:3030/courses/id');
       expect(sut.getCoursesByPageNumber)
         .toHaveBeenCalledWith(1);
+      expect(mockLoaderBlock.hide)
+        .toHaveBeenCalled();
     });
 
     it('should remove course and NOT call getCoursesByPageNumber', () => {

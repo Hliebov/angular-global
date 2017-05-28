@@ -2,6 +2,7 @@ import { Injectable }     from '@angular/core';
 import { CanActivate, Router }    from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from './../app.store';
+import { LOGIN } from '../reducers/auth.reducer';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
@@ -15,7 +16,7 @@ export class AuthGuard implements CanActivate {
       this.router.navigate(['/login']);
       return false;
     } else {
-      this.store.dispatch({type: 'login', payload: username});
+      this.store.dispatch({type: LOGIN, payload: username});
       return true;
     }
   }

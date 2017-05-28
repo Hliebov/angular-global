@@ -23,4 +23,7 @@ function coursesReducer(state: CoursesState = defaultCoursesState, action: Actio
   }
 }
 
-export { coursesReducer, CoursesState, UPDATE_COURSES };
+export { coursesReducer,
+  defaultCoursesState,
+  CoursesState,
+  UPDATE_COURSES };
